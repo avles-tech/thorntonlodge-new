@@ -1,20 +1,18 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateGalleryTagsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('gallery_tags', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->integer('order')->default(1);
             $table->string('title');
             $table->string('slug')->unique();
@@ -25,11 +23,9 @@ class CreateGalleryTagsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('gallery_tags');
     }
-}
+};
