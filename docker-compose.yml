@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    image: laravelsail/php81-composer:latest
+    container_name: thorntonlodge-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - app-network
+    command: tail -f /dev/null
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: thorntonlodge-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: thornton_db
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local

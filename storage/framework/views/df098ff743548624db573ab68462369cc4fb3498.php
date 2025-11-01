@@ -1,11 +1,11 @@
-﻿@extends('layout.main')
-@section('con_title')
-    <title>{{$page_title}}</title>
-    <meta name="description" content="{{$description}}">
-    <meta name="keywords" content="{{$keywords}}" />
-    <meta name="Abstract" content="{{$Abstract}}" />
-@endsection
-@section('extra_css')
+﻿
+<?php $__env->startSection('con_title'); ?>
+    <title><?php echo e($page_title); ?></title>
+    <meta name="description" content="<?php echo e($description); ?>">
+    <meta name="keywords" content="<?php echo e($keywords); ?>" />
+    <meta name="Abstract" content="<?php echo e($Abstract); ?>" />
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('extra_css'); ?>
     <style type="text/css">
         .main-content {
             background: url(../images/banner.jpg) no-repeat center;
@@ -226,8 +226,8 @@
             return false;
         }
     </script>
-@endsection
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <section class="banner" style="margin-top: -33px;">
         <div class="container">
             <!-- snow balls -->
@@ -312,7 +312,7 @@
                     <!--<h2 class="head-first">Vision For Your Care Life</h2>-->
                     <h3 class="mb-3" style="font-weight: 500">Welcome to<br/>THORNTON LODGE</h3>
                     <p class="mb-5" style="color:#2e2e2e;"> Thornton Lodge is a Residential Care Home for Adults and Older People with Mental Health Illness, registered under the Health and Social Care Act 2008 by the Care Quality Commission. It was opened in 1987 and has continued to grow in number, quality of care and improved services.</p>
-                    <a href="{{ route('about') }}" class="btn btn-cus">Read More</a>
+                    <a href="<?php echo e(route('about')); ?>" class="btn btn-cus">Read More</a>
                 </div>
                 <!--<div class="col-lg-6 banner-image">
                     <div class="img-effect">
@@ -328,15 +328,15 @@
     <!--/ab -->
 </br>
     <h3 class="tittle"><span class="sub-tittle">Introduction to Thornton Lodge</span></h3>
-    <video width="50%" controls loop muted style="display: block; margin: 20px auto;" poster="{{ asset('images/THORNTON_LODGE_THUMBNAIL.png') }}">
-        <source src="{{ asset('videos/THORNTON_LODGE_PROMO_VIDEO_4K.mp4') }}" type="video/mp4">
+    <video width="50%" controls loop muted style="display: block; margin: 20px auto;" poster="<?php echo e(asset('images/THORNTON_LODGE_THUMBNAIL.png')); ?>">
+        <source src="<?php echo e(asset('videos/THORNTON_LODGE_PROMO_VIDEO_4K.mp4')); ?>" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
 </br>
 <h3 class="tittle"><span class="sub-tittle">A note from Joe, our Chairman and founder.</span></h3>
-<video width="50%" controls loop muted style="display: block; margin: 20px auto;" poster="{{ asset('images/THORNTON_LODGE_JOE.png') }}">
-    <source src="{{ asset('videos/THORNTON_LODGE_JOE.mp4') }}" type="video/mp4">
+<video width="50%" controls loop muted style="display: block; margin: 20px auto;" poster="<?php echo e(asset('images/THORNTON_LODGE_JOE.png')); ?>">
+    <source src="<?php echo e(asset('videos/THORNTON_LODGE_JOE.mp4')); ?>" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
@@ -370,15 +370,15 @@
                         <h3 class="tittle title-move  text-center mb-lg-5 mb-3">&nbsp;</h3>
                         <div class="">
                             <div class="row">
-                                @if(count($testimonials)>0)
-                                    @foreach($testimonials as $testimonial)
+                                <?php if(count($testimonials)>0): ?>
+                                    <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="col-lg-12 col-sm-12" style="margin-bottom: 30px;">
-                                            <p class="sub-test"><span class="fa fa-quote-left" aria-hidden="true"></span>{{ $testimonial->comment }}</p>
+                                            <p class="sub-test"><span class="fa fa-quote-left" aria-hidden="true"></span><?php echo e($testimonial->comment); ?></p>
                                         </div>
-                                    @endforeach
-                                @else
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php else: ?>
                                     <p class="noresult"><i class="fa fa-info-circle"></i> No testimonial results found</p>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -386,19 +386,7 @@
                 <!-- //testimonials -->
                 
                 <!-- COVID19 -->
-                {{-- <div class="testimonials py-md-2 py-0">
-                    <div class="container py-xl-5 py-lg-3">
-                        <h3 class="tittle"><span class="sub-tittle">COVID-19 Update</span></h3>
-                        <h3 class="tittle title-move  text-center mb-lg-5 mb-3">&nbsp;</h3>
-                        <div class="">
-                            <div class="row">
-                                <div class="col-lg-12 col-sm-12" style="margin-bottom: 30px;">
-                                    <p class="sub-test">Thornton Lodge prides itself on maintaining its rigorous infection control and prevention programme and has undertaken extensive measures, including the installation of new automatic sanitiser stations at both entrances, a temperature imaging camera at our main entrance and temperature monitoring checks, to mitigate any risk from Covid-19 coming into the home. The safety and wellbeing of our Residents is paramount and we are taking all necessary measures within our ability to ensure our residents have, and will continue to remain safe at Thornton Lodge.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+                
                 <!-- //COVID19 -->
 
                 <!-- services -->
@@ -453,31 +441,31 @@
                         <h3 class="tittle"><span class="sub-tittle">AVAILABILITY</span></h3>
                         <br/>
                         <div class="row mid-slide">
-                            @if(count($rooms)>0)
-                                @foreach($rooms as $room)
+                            <?php if(count($rooms)>0): ?>
+                                <?php $__currentLoopData = $rooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="col-lg-4 featured-content">
-                                        <img src="/Uploads/room_cover_images/{{ $room->cover_image }}" alt="{{ $room->title }}" class="img-fluid image1">
+                                        <img src="/Uploads/room_cover_images/<?php echo e($room->cover_image); ?>" alt="<?php echo e($room->title); ?>" class="img-fluid image1">
                                         <span class="money">Available</span>
                                         <!--/Property_info-->
                                         <div class="property-info-list">
                                             <div class="footer-properties">
-                                                <a href="{{ route('contact') }}" ><span class="year text-right"> Enquire Now</span></a>
-                                                <a class="admin" href="#">{{ $room->title }}</a>
+                                                <a href="<?php echo e(route('contact')); ?>" ><span class="year text-right"> Enquire Now</span></a>
+                                                <a class="admin" href="#"><?php echo e($room->title); ?></a>
                                             </div>
-                                            <p>{{ $room->excerpt }}</p>
+                                            <p><?php echo e($room->excerpt); ?></p>
                                         </div>
                                         <!--//Property_info-->
                                     </div>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 
-                            @else
+                            <?php else: ?>
                                 <p class="noresult"><i class="fa fa-info-circle"></i> No room results found</p>
-                            @endif
+                            <?php endif; ?>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="text-center" style="margin-top:20px;">
-                                    <a href="{{ route('vacancies') }}" class="btn btn-info btn-lg" style="background: #6ecfe9;padding-left:45px; border: none; border-radius: 0; padding-right:45px; ">See More Rooms</a>
+                                    <a href="<?php echo e(route('vacancies')); ?>" class="btn btn-info btn-lg" style="background: #6ecfe9;padding-left:45px; border: none; border-radius: 0; padding-right:45px; ">See More Rooms</a>
                                 </div>
                             </div>
                         </div>
@@ -495,13 +483,13 @@
             <div class="row text-center">
                 <div class="col col-back-div-left">
                     <div class="counter">
-                        <h3 class="timer count-title text-right count-number">{{ $room_info->beds ?? 0 }}</h3>
+                        <h3 class="timer count-title text-right count-number"><?php echo e($room_info->beds ?? 0); ?></h3>
                         <p class="count-text text-right">Total Number of beds</p>
                     </div>
                 </div>
                 <div class="col col-back-div-right">
                     <div class="counter">
-                        <h3 class="timer count-title count-number text-left">{{ $count_room  ?? 0 }}</h3>
+                        <h3 class="timer count-title count-number text-left"><?php echo e($count_room  ?? 0); ?></h3>
                         <p class="count-text text-left">Total number of vacancies</p>
                     </div>
                 </div>
@@ -589,7 +577,8 @@
         </div>
     </section>
     <!-- //hand-crafted -->
-@endsection
-@section('extra_script')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('extra_script'); ?>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/resources/views/pages/index.blade.php ENDPATH**/ ?>
