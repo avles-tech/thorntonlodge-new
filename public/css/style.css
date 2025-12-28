@@ -113,7 +113,7 @@ ul {
 }
 
 .top-right-info li span.fa-twitter {
-    background: #6ecfe9;
+    background: #5095CD;
 }
 
 .top-right-info li span.fa-google-plus {
@@ -221,8 +221,8 @@ a.footer h2 a {
 .main-content.inner {}
 
 .head-first {
-    background: #6ecfe9;
-    border: 1px solid #6ecfe9;
+    background: #5095CD;
+    border: 1px solid #5095CD;
     position: relative;
     padding: 15px;
     color: #fff !important;
@@ -238,7 +238,7 @@ a.footer h2 a {
     left: 1%;
     width: 10px;
     height: 0;
-    border: 1px solid #6ecfe9;
+    border: 1px solid #5095CD;
 
 }
 
@@ -252,7 +252,7 @@ a.footer h2 a {
 /* this border color controlls the outside, thin border */
 .head-first:before {
     top: 45px;
-    border-color: #6ecfe9 transparent transparent transparent;
+    border-color: #5095CD transparent transparent transparent;
     border-width: 11px;
 }
 
@@ -275,7 +275,7 @@ a.footer h2 a {
 }
 
 .banner-info-w3ls a {
-    background: #6ecfe9;
+    background: #5095CD;
     padding: 11px 30px;
     font-size: 14px;
     letter-spacing: 1px;
@@ -290,7 +290,7 @@ a.footer h2 a {
 }
 
 .banner-info-w3ls a:hover {
-    background: #ff3838;
+    background: #F39C63;
     color: #fff;
 }
 
@@ -308,8 +308,8 @@ section.banner {
 .img-effect img {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #6ecfe9;
-    border-top: 5px solid #6ecfe9;
+    border-bottom: 5px solid #5095CD;
+    border-top: 5px solid #5095CD;
 
     border-radius: 5%;
     -webkit-border-radius: 5%;
@@ -323,7 +323,7 @@ section.banner {
 }
 
 .custom-circle img {
-    border: 2px solid #6ecfe9 !important;
+    border: 2px solid #5095CD !important;
     border-radius: 100% !important;
     padding: 20px !important;
     -webkit-border-radius: 5%;
@@ -395,7 +395,7 @@ section.banner {
 }
 
 .popup .close:hover {
-    color: #6ecfe9;
+    color: #F39C63;
 }
 
 
@@ -431,7 +431,7 @@ h3.tittle-move {
     font-weight: 600;
     letter-spacing: 1px;
     display: block;
-    background: #6ecfe9;
+    background: #5095CD;
     padding: 10px;
     text-transform: uppercase;
     left: 10px;
@@ -460,7 +460,7 @@ h3.tittle-move {
 .feature-grids span {
     font-size: 2em;
     vertical-align: middle;
-    background: #d3f2fb;
+    background: #E8F1F8;
     width: 90px;
     height: 90px;
     line-height: 2.7em;
@@ -483,7 +483,7 @@ h3.tittle-move {
 
 .bottom-gd:hover span,
 .bottom-gd2-active span {
-    background: #6ecfe9;
+    background: #F39C63;
     transition: 2s all;
     -webkit-transition: 2s all;
     -moz-transition: 2s all;
@@ -500,7 +500,7 @@ h3.tittle-move {
 /*--/counter--*/
 
 .stats {
-    background: #6ecfe9;
+    background: #5095CD;
     padding: 4em 0;
 }
 
@@ -517,7 +517,7 @@ h3.tittle-move {
     margin-bottom: 0;
     text-align: center;
     font-weight: 600;
-    color: #6ecfe9;
+    color: #5095CD;
 }
 
 .count-text {
@@ -525,7 +525,7 @@ h3.tittle-move {
     margin-top: 10px;
     margin-bottom: 0;
     text-align: center;
-    color: #6ecfe9;
+    color: #5095CD;
     font-weight: 500;
     text-space: 3px;
 }
@@ -534,7 +534,7 @@ h3.tittle-move {
     margin: 0 auto;
     float: none;
     display: table;
-    color: #6ecfe9;
+    color: #5095CD;
 }
 
 /*--//counter--*/
@@ -556,7 +556,7 @@ h3.tittle-move {
 
 .sub-tittle-team {
     font-size: 0.67em;
-    color: #17c0eb;
+    color: #5095CD;
     font-weight: 700;
     letter-spacing: 2px;
     display: block;
@@ -573,7 +573,7 @@ h3.tittle-move {
     color: white !important;
     font-weight: 600 !important;
     letter-spacing: 1px;
-    background: #6ecfe9;
+    background: #5095CD;
     padding: 10px;
     text-transform: uppercase;
     left: 10px;
@@ -597,7 +597,7 @@ h3.tittle-move {
     font-weight: 600 !important;
     letter-spacing: 1px;
 
-    background: #6ecfe9;
+    background: #5095CD;
     padding: 10px;
     text-transform: uppercase;
     text-align: right;
@@ -634,7 +634,7 @@ h3.tittle-move {
 }
 
 .btn-info:hover {
-    background: #6ecfe9 !important;
+    background: #F39C63 !important;
 }
 
 .extra-logo {
@@ -646,20 +646,20 @@ h3.tittle-move {
     height: 90px;
     padding: 3px;
     margin-left: 13%;
-    border: 2px solid #6ecfe9;
+    border: 2px solid #5095CD;
     border-radius: 3px;
     margin-top: 10px;
 }
 
 .col-back-div-left {
     background: white;
-    border: 1px solid #6ecfe9;
-    border-right: 2px solid #6ecfe9;
+    border: 1px solid #5095CD;
+    border-right: 2px solid #5095CD;
 }
 
 .col-back-div-right {
     background: white;
-    border: 1px solid #6ecfe9;
+    border: 1px solid #5095CD;
 }
 
 ul.team-icons li {
@@ -713,7 +713,7 @@ ul.team-icons.new-inf li {
 .team-img img {
     width: 220px;
     height: 220px;
-    border: 2px solid #6ecfe9;
+    border: 2px solid #5095CD;
     border-radius: 8% !important;
     object-fit: cover;
 }
@@ -723,7 +723,7 @@ ul.team-icons.new-inf li {
     height: 500px;
     display: block;
     margin: 0 auto;
-    border: 2px solid #6ecfe9;
+    border: 2px solid #5095CD;
     border-radius: 8% !important;
     object-fit: cover;
 }
@@ -732,7 +732,7 @@ ul.team-icons.new-inf li {
     display: block;
     text-align: center;
     font-size: 14px;
-    color: #6ecfe9;
+    color: #5095CD;
     cursor: pointer;
     margin-top: 5px;
 }
@@ -740,7 +740,7 @@ ul.team-icons.new-inf li {
 .info-link-care-taker {
     display: block;
     font-size: 14px;
-    color: #6ecfe9;
+    color: #5095CD;
     cursor: pointer;
     margin-top: 5px;
 }
@@ -844,7 +844,7 @@ ul.tic-info li span {
 
 .detail ul li:hover span,
 .footer-properties:hover a {
-    color: #6ecfe9;
+    color: #F39C63;
 }
 
 .detail .location a,
@@ -907,7 +907,7 @@ p.sub-test {
 }
 
 p.sub-test span {
-    color: #6ecfe9;
+    color: #5095CD;
     font-size: 3em;
     margin-right: 0.3em;
 }
@@ -971,7 +971,7 @@ section.hand-crafted p {
     padding: 0.5em 1em;
     font-weight: 600;
     left: 4%;
-    color: #6ecfe9;
+    color: #5095CD;
 }
 
 /*--/--*/
@@ -1133,7 +1133,7 @@ h5.mt-0 {
 }
 
 .single-gd form input[type="submit"]:hover {
-    background: #6ecfe9;
+    background: #F39C63;
 }
 
 .media-body p {
@@ -1586,7 +1586,7 @@ input.checkbox:checked:after {
 }
 
 .contact-form button.btn:hover {
-    background: #ff3838;
+    background: #F39C63;
 }
 
 .map iframe {
@@ -1822,7 +1822,7 @@ li.facebook a {
 
 li.twitter a {
     color: #fff;
-    background: #6ecfe9;
+    background: #5095CD;
 }
 
 li.google a {

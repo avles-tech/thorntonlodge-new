@@ -19,7 +19,7 @@
         }
 
         .btn-cus:hover{
-            background: #34abcb !important;
+            background: #F39C63 !important;
         }
         
         /* Parallax Hero */
@@ -48,7 +48,7 @@
         
         .modern-section-title .title-tag {
             display: inline-block;
-            background: linear-gradient(135deg, #6ecfe9 0%, #5ab8d9 100%);
+            background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%);
             color: white;
             padding: 8px 28px;
             border-radius: 50px;
@@ -72,17 +72,17 @@
         .modern-section-title .title-underline {
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, transparent 0%, #6ecfe9 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, #5095CD 50%, transparent 100%);
             margin: 25px auto 0;
             border-radius: 2px;
         }
         
         .modern-section-title.alt .title-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #5095CD 0%, #2C3E50 100%);
         }
         
         .modern-section-title.alt .title-underline {
-            background: linear-gradient(90deg, transparent 0%, #667eea 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, #5095CD 50%, transparent 100%);
         }
         
         /* Testimonial Carousel */
@@ -113,8 +113,8 @@
             height: 45px;
             border-radius: 50%;
             background: white;
-            border: 2px solid #6ecfe9;
-            color: #6ecfe9;
+            border: 2px solid #5095CD;
+            color: #5095CD;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -124,7 +124,7 @@
         }
         
         .carousel-btn:hover {
-            background: #6ecfe9;
+            background: #5095CD;
             color: white;
             transform: scale(1.1);
         }
@@ -146,7 +146,7 @@
         }
         
         .indicator-dot.active {
-            background: #6ecfe9;
+            background: #5095CD;
             width: 30px;
             border-radius: 5px;
         }
@@ -165,7 +165,7 @@
             transform: translateX(-50%);
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, #6ecfe9 0%, #667eea 100%);
+            background: linear-gradient(180deg, #5095CD 0%, #5095CD 100%);
         }
         
         .timeline-item {
@@ -203,7 +203,7 @@
             justify-content: center;
             font-weight: 800;
             font-size: 18px;
-            color: #6ecfe9;
+            color: #5095CD;
             box-shadow: 0 0 0 8px rgba(110, 207, 233, 0.2);
             z-index: 2;
         }
@@ -514,69 +514,33 @@
 @endsection
 @section('content')
     <!-- Modern Hero Banner with Parallax - Full Width Text on Background -->
-    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(102, 126, 234, 0.75), rgba(118, 75, 162, 0.85)), url(../images/banner.jpg) no-repeat center center; background-size: cover; padding: 120px 0 140px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
+    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(80, 149, 205, 0.4), rgba(44, 62, 80, 0.5)), url(../images/banner.jpg) no-repeat center center; background-size: cover; background-position: center center; padding: 120px 0 140px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
         <!-- Decorative Elements -->
         <div class="float-animation" style="position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(80px);"></div>
-        <div class="float-animation" style="position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: rgba(110, 207, 233, 0.1); border-radius: 50%; filter: blur(100px); animation-delay: 1s;"></div>
+        <div class="float-animation" style="position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: rgba(80, 149, 205, 0.1); border-radius: 50%; filter: blur(100px); animation-delay: 1s;"></div>
 
         <div class="container" style="position: relative; z-index: 2;">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12 text-center scroll-animate-zoom">
-                    <!-- Badge -->
-                    <div style="display: inline-block; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); color: white; padding: 12px 35px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-bottom: 35px; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.3); letter-spacing: 1.5px; text-transform: uppercase;">
-                        <i class="fa fa-check-circle" style="margin-right: 10px;"></i>CQC Registered Care Home
-                    </div>
-
                     <!-- Main Heading -->
-                    <h1 style="font-size: 68px; font-weight: 900; color: white; margin-bottom: 35px; line-height: 1.2; text-shadow: 0 6px 30px rgba(0,0,0,0.5); letter-spacing: -2px;">
+                    <h1 style="font-size: 68px; font-weight: 900; color: white; margin-bottom: 35px; line-height: 1.2; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); letter-spacing: -2px;">
                         Welcome to<br/>
-                        <span style="font-size: 80px; background: linear-gradient(135deg, #6ecfe9 0%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: none; display: inline-block;">THORNTON LODGE</span>
+                        <span style="font-size: 80px; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); display: inline-block;">THORNTON LODGE</span>
                     </h1>
 
                     <!-- Subheading -->
-                    <p style="font-size: 26px; color: white; font-weight: 600; margin-bottom: 40px; text-shadow: 0 3px 15px rgba(0,0,0,0.3); max-width: 950px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+                    <p style="font-size: 26px; color: white; font-weight: 600; margin-bottom: 40px; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); max-width: 950px; margin-left: auto; margin-right: auto; line-height: 1.5;">
                         Quality Residential Care for Adults and Older People with Mental Health Needs
                     </p>
 
                     <!-- Description -->
-                    <p style="color: rgba(255, 255, 255, 0.95); line-height: 1.9; font-size: 19px; margin-bottom: 55px; max-width: 1100px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 10px rgba(0,0,0,0.3); font-weight: 400;">
+                    <p style="color: rgba(255, 255, 255, 0.95); line-height: 1.9; font-size: 19px; margin-bottom: 55px; max-width: 1100px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); font-weight: 400;">
                         Thornton Lodge is a Residential Care Home for Adults and Older People with Mental Health Illness, registered under the Health and Social Care Act 2008 by the Care Quality Commission. Established in 1987, we have continued to grow in excellence, providing high-quality care and improved services.
                     </p>
 
-                    <!-- Key Features -->
-                    <div class="row justify-content-center" style="margin: 60px 0;">
-                        <div class="col-lg-3 col-md-4 col-sm-6 scroll-animate-delay-1" style="margin-bottom: 25px;">
-                            <div class="ripple" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 35px 30px; border-radius: 20px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.25); transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.2); cursor: pointer;">
-                                <div style="background: rgba(255, 255, 255, 0.25); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
-                                    <i class="fa fa-calendar" style="color: white; font-size: 36px;"></i>
-                                </div>
-                                <h4 style="font-size: 22px; font-weight: 700; color: white; margin-bottom: 12px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">Since 1987</h4>
-                                <p style="color: rgba(255, 255, 255, 0.9); font-size: 15px; margin: 0; line-height: 1.6; text-shadow: 0 1px 5px rgba(0,0,0,0.2);">Over 35 years of trusted care</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 scroll-animate-delay-2" style="margin-bottom: 25px;">
-                            <div class="ripple" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 35px 30px; border-radius: 20px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.25); transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.2); cursor: pointer;">
-                                <div style="background: rgba(255, 255, 255, 0.25); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
-                                    <i class="fa fa-shield" style="color: white; font-size: 36px;"></i>
-                                </div>
-                                <h4 style="font-size: 22px; font-weight: 700; color: white; margin-bottom: 12px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">CQC Registered</h4>
-                                <p style="color: rgba(255, 255, 255, 0.9); font-size: 15px; margin: 0; line-height: 1.6; text-shadow: 0 1px 5px rgba(0,0,0,0.2);">Regulated & inspected care</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 scroll-animate-delay-3" style="margin-bottom: 25px;">
-                            <div class="ripple" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 35px 30px; border-radius: 20px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.25); transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.2); cursor: pointer;">
-                                <div style="background: rgba(255, 255, 255, 0.25); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
-                                    <i class="fa fa-heart" style="color: white; font-size: 36px;"></i>
-                                </div>
-                                <h4 style="font-size: 22px; font-weight: 700; color: white; margin-bottom: 12px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">Specialist Care</h4>
-                                <p style="color: rgba(255, 255, 255, 0.9); font-size: 15px; margin: 0; line-height: 1.6; text-shadow: 0 1px 5px rgba(0,0,0,0.2);">Mental health support</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- CTA Buttons -->
                     <div style="margin-top: 55px;">
-                        <a href="{{ route('about') }}" class="ripple" style="display: inline-block; background: white; color: #667eea; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; margin: 0 12px 15px 12px; box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+                        <a href="{{ route('about') }}" class="ripple" style="display: inline-block; background: white; color: #5095CD; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; margin: 0 12px 15px 12px; box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
                             <i class="fa fa-info-circle" style="margin-right: 12px;"></i>Learn More About Us
                         </a>
                         <a href="{{ route('contact') }}" class="ripple" style="display: inline-block; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); color: white; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; margin: 0 12px 15px 12px; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25); border: 2px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
@@ -701,12 +665,12 @@
                 
                 <div class="feature-grids row mt-5 mb-lg-5 mb-3 text-center">
                     <div class="col-lg-8 col-md-12 scroll-animate-left" data-aos="fade-up" style="margin-bottom: 25px;">
-                        <div class="bottom-gd ripple" style="background: white; padding: 45px 35px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; border-top: 5px solid #6ecfe9; cursor: pointer;">
-                            <div style="background: linear-gradient(135deg, #6ecfe9 0%, #5ab8d9 100%); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 6px 20px rgba(110, 207, 233, 0.4);">
+                        <div class="bottom-gd ripple" style="background: white; padding: 45px 35px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; border-top: 5px solid #5095CD; cursor: pointer;">
+                            <div style="background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 6px 20px rgba(110, 207, 233, 0.4);">
                                 <span class="fa fa-lightbulb-o" aria-hidden="true" style="font-size: 40px; color: white;"></span>
                             </div>
                             <h3 class="my-4" style="font-size: 24px; font-weight: 600;">Helpful Advice</h3>
-                            <p style="line-height: 1.8; font-size: 16px; color: #555;">Please provide details of possible placement as well as the service user's needs. To discuss facilities, fees, arrange a visit or if you just want a quick chat with any of our management staff, please give us a call on 0208 684 1056 or alternatively you can email us at <a style="color: #6ecfe9; text-decoration: none; font-weight: 600;">admin@thorntonlodgecare.com</a></p>
+                            <p style="line-height: 1.8; font-size: 16px; color: #555;">Please provide details of possible placement as well as the service user's needs. To discuss facilities, fees, arrange a visit or if you just want a quick chat with any of our management staff, please give us a call on 0208 684 1056 or alternatively you can email us at <a style="color: #5095CD; text-decoration: none; font-weight: 600;">admin@thorntonlodgecare.com</a></p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 scroll-animate-right" data-aos="fade-up" style="margin-bottom: 25px;">
@@ -738,7 +702,7 @@
                                             @foreach($testimonials as $index => $testimonial)
                                                 <div class="testimonial-slide">
                                                     <div style="background: white; padding: 50px 45px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); position: relative; min-height: 200px; display: flex; align-items: center;">
-                                                        <div style="position: absolute; top: -15px; left: 30px; background: #6ecfe9; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(110, 207, 233, 0.4);">
+                                                        <div style="position: absolute; top: -15px; left: 30px; background: #5095CD; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(110, 207, 233, 0.4);">
                                                             <span class="fa fa-quote-left" aria-hidden="true" style="color: white; font-size: 24px;"></span>
                                                         </div>
                                                         <p style="padding: 0; background: transparent; border: none; box-shadow: none; line-height: 1.9; font-size: 18px; margin: 25px 0 0 0; color: #333; text-align: center;">{{ $testimonial->comment }}</p>
@@ -798,7 +762,7 @@
 
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="bottom-gd fea active scroll-animate-zoom" data-aos="fade-up" style="background: white; padding: 45px 50px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-left: 6px solid #6ecfe9;">
+                                <div class="bottom-gd fea active scroll-animate-zoom" data-aos="fade-up" style="background: white; padding: 45px 50px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-left: 6px solid #5095CD;">
                                     <p class="text-justify" style="font-size: 16px; line-height: 1.9; margin-bottom: 25px; color: #555;">Thornton Lodge is a Residential Home registered under the Health and Social Care Act 2008 by the Care Quality Commission.</p>
 
                                     <p class="text-justify" style="font-size: 16px; line-height: 1.9; margin: 0; color: #555;">The Home is visited between regular intervals, both announced and unannounced by the Care Quality Commission. We are proud to highlight that our inspections are overall rated as <strong style="color: #27ae60; font-size: 18px;">"Good"</strong>. Our reports are all publicly available to read via the Care Quality Commission's website.</p>
@@ -854,7 +818,7 @@
                                                     <a class="admin" href="#" style="font-weight: 700; font-size: 20px; color: #333; text-decoration: none; display: block; margin-bottom: 10px;">{{ $room->title }}</a>
                                                 </div>
                                                 <p style="line-height: 1.7; margin-bottom: 20px; color: #666; font-size: 15px;">{{ $room->excerpt }}</p>
-                                                <a href="{{ route('contact') }}" class="ripple" style="display: inline-block; background: #6ecfe9; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(110, 207, 233, 0.3);">Enquire Now</a>
+                                                <a href="{{ route('contact') }}" class="ripple" style="display: inline-block; background: #5095CD; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(110, 207, 233, 0.3);">Enquire Now</a>
                                             </div>
                                             <!--//Property_info-->
                                         </div>
@@ -868,7 +832,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="text-center scroll-animate" style="margin-top: 30px; margin-bottom: 40px;">
-                                    <a href="{{ route('vacancies') }}" class="btn btn-info btn-lg ripple" style="background: linear-gradient(135deg, #6ecfe9 0%, #5ab8d9 100%); padding: 16px 50px; border: none; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 6px 25px rgba(110, 207, 233, 0.4); font-size: 18px; font-weight: 600; color: white; text-decoration: none; display: inline-block;">See More Rooms <i class="fa fa-arrow-right" style="margin-left: 10px;"></i></a>
+                                    <a href="{{ route('vacancies') }}" class="btn btn-info btn-lg ripple" style="background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%); padding: 16px 50px; border: none; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 6px 25px rgba(110, 207, 233, 0.4); font-size: 18px; font-weight: 600; color: white; text-decoration: none; display: inline-block;">See More Rooms <i class="fa fa-arrow-right" style="margin-left: 10px;"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -881,7 +845,7 @@
     <!-- //ab -->
 
     <!--/counter with animation -->
-    <section class="stats room-status scroll-animate" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 0; position: relative; overflow: hidden;">
+    <section class="stats room-status scroll-animate" style="background: linear-gradient(135deg, #5095CD 0%, #2C3E50 100%); padding: 60px 0; position: relative; overflow: hidden;">
         <div class="container">
             <div class="row text-center justify-content-center">
                 <div class="col-lg-5 col-md-6 scroll-animate-left" style="margin-bottom: 30px;">

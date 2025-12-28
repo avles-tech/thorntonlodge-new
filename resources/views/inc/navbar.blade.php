@@ -20,7 +20,7 @@
 }
 
 .modern-topbar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #5095CD 0%, #2C3E50 100%);
     padding: 10px 0;
     font-size: 14px;
     opacity: 1;
@@ -88,7 +88,7 @@
 }
 
 .modern-nav-link {
-    color: rgba(255, 255, 255, 0.95) !important;
+    color: rgba(10, 1, 1, 0.95) !important;
     text-decoration: none;
     padding: 10px 18px;
     display: block;
@@ -106,12 +106,12 @@
 }
 
 .modern-nav-link:hover {
-    color: #6ecfe9 !important;
-    background: rgba(110, 207, 233, 0.15);
+    color: #F39C63 !important;
+    background: rgba(80, 149, 205, 0.15);
 }
 
 .modern-navbar.scrolled .modern-nav-link:hover {
-    background: rgba(110, 207, 233, 0.1);
+    background: rgba(80, 149, 205, 0.1);
 }
 
 .modern-nav-link::after {
@@ -122,7 +122,7 @@
     transform: translateX(-50%) scaleX(0);
     width: 30px;
     height: 3px;
-    background: #6ecfe9;
+    background: #5095CD;
     border-radius: 2px;
     transition: transform 0.3s ease;
 }
@@ -133,7 +133,7 @@
 }
 
 .modern-nav-item.active .modern-nav-link {
-    color: #6ecfe9 !important;
+    color: #5095CD !important;
 }
 
 .modern-dropdown-toggle::after {
@@ -184,8 +184,8 @@
 }
 
 .modern-dropdown-item:hover {
-    background: linear-gradient(90deg, rgba(110, 207, 233, 0.1) 0%, transparent 100%);
-    color: #6ecfe9;
+    background: linear-gradient(90deg, rgba(80, 149, 205, 0.1) 0%, transparent 100%);
+    color: #F39C63;
     padding-left: 30px;
 }
 
@@ -231,15 +231,15 @@
 }
 
 .mega-menu-item:hover {
-    background: linear-gradient(135deg, rgba(110, 207, 233, 0.1) 0%, rgba(102, 126, 234, 0.05) 100%);
-    border-color: rgba(110, 207, 233, 0.3);
+    background: linear-gradient(135deg, rgba(80, 149, 205, 0.1) 0%, rgba(243, 156, 99, 0.05) 100%);
+    border-color: rgba(80, 149, 205, 0.3);
     transform: translateX(5px);
 }
 
 .mega-menu-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #6ecfe9 0%, #5ab8d9 100%);
+    background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -280,19 +280,20 @@
 }
 
 .modern-navbar.scrolled .modern-cta-button {
-    background: linear-gradient(135deg, #6ecfe9 0%, #5ab8d9 100%) !important;
+    background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%) !important;
     border: none !important;
-    box-shadow: 0 4px 15px rgba(110, 207, 233, 0.3);
+    box-shadow: 0 4px 15px rgba(80, 149, 205, 0.3);
     text-shadow: none;
 }
 
 .modern-cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(110, 207, 233, 0.4);
+    box-shadow: 0 6px 20px rgba(243, 156, 99, 0.4);
+    background: linear-gradient(135deg, #F39C63 0%, #E67E22 100%) !important;
 }
 
 .modern-navbar.scrolled .modern-cta-button:hover {
-    background: linear-gradient(135deg, #5ab8d9 0%, #4aa7c9 100%) !important;
+    background: linear-gradient(135deg, #F39C63 0%, #E67E22 100%) !important;
 }
 
 .modern-cta-button::after {
@@ -305,7 +306,7 @@
     top: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, #6ecfe9 0%, #667eea 100%);
+    background: linear-gradient(90deg, #5095CD 0%, #F39C63 100%);
     z-index: 1001;
     transition: width 0.1s ease;
 }
@@ -388,7 +389,7 @@
         margin-left: 0;
         margin-top: 10px;
         text-align: center;
-        background: linear-gradient(135deg, #6ecfe9 0%, #5ab8d9 100%) !important;
+        background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%) !important;
         border: none !important;
         text-shadow: none;
     }
@@ -428,12 +429,12 @@
 }
 
 .floating-btn:nth-child(2) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%);
     animation-delay: 0.2s;
 }
 
 .floating-btn:nth-child(3) {
-    background: linear-gradient(135deg, #6ecfe9 0%, #5ab8d9 100%);
+    background: linear-gradient(135deg, #F39C63 0%, #E67E22 100%);
     animation-delay: 0.3s;
 }
 
@@ -550,16 +551,16 @@
                         <a href="{{ route('about') }}" class="modern-nav-link modern-dropdown-toggle">About</a>
                         <div class="modern-dropdown-menu">
                             <a href="{{ route('about') }}" class="modern-dropdown-item">
-                                <i class="fa fa-info-circle" style="margin-right: 8px; color: #6ecfe9;"></i>Who We Are
+                                <i class="fa fa-info-circle" style="margin-right: 8px; color: #5095CD;"></i>Who We Are
                             </a>
                             <a href="{{ route('testimonial') }}" class="modern-dropdown-item">
-                                <i class="fa fa-quote-left" style="margin-right: 8px; color: #6ecfe9;"></i>Testimonials
+                                <i class="fa fa-quote-left" style="margin-right: 8px; color: #5095CD;"></i>Testimonials
                             </a>
                             <a href="{{ route('team') }}" class="modern-dropdown-item">
-                                <i class="fa fa-users" style="margin-right: 8px; color: #6ecfe9;"></i>Team
+                                <i class="fa fa-users" style="margin-right: 8px; color: #5095CD;"></i>Team
                             </a>
                             <a href="{{ route('job_vacancy') }}" class="modern-dropdown-item">
-                                <i class="fa fa-briefcase" style="margin-right: 8px; color: #6ecfe9;"></i>Job Vacancies
+                                <i class="fa fa-briefcase" style="margin-right: 8px; color: #5095CD;"></i>Job Vacancies
                             </a>
                         </div>
                     </li>
