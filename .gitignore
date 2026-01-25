@@ -12,7 +12,6 @@ Homestead.yaml
 *.mov
 *.avi
 *.wmv
-public/Adminassets/vendors/
 /public/vendor/
 *.zip
 *.log
