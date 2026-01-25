@@ -566,7 +566,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     <!-- Modern Hero Banner with Parallax - Full Width Text on Background -->
-    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(123, 165, 199, 0.35), rgba(107, 148, 181, 0.45)), url(../images/banner.jpg) no-repeat center center; background-size: cover; background-position: center center; padding: 20px 0 160px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
+    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.6)), url(../images/banner_.jpg) no-repeat center center; background-size: cover; background-position: center center; padding: 20px 0 160px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
         <!-- Decorative Elements -->
         <div class="float-animation" style="position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(80px);"></div>
         <div class="float-animation" style="position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: rgba(80, 149, 205, 0.1); border-radius: 50%; filter: blur(100px); animation-delay: 1s;"></div>
@@ -575,13 +575,13 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12 text-center hero-content">
                     <!-- Main Heading -->
-                    <h1 style="font-size: 72px; font-weight: 800; color: white; margin-bottom: 40px; line-height: 1.3; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); letter-spacing: -1px;">
+                    <h1 style="font-size: 52px; font-weight: 400; color: white; margin-bottom: 40px; line-height: 1.4; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); letter-spacing: 0.5px;">
                         Welcome to<br/>
-                        <span style="font-size: 86px; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: inline-block;">THORNTON LODGE</span>
+                        <span style="font-size: 62px; font-weight: 500; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: inline-block; letter-spacing: 1px;">THORNTON LODGE</span>
                     </h1>
 
                     <!-- Subheading -->
-                    <p style="font-size: 28px; color: white; font-weight: 600; margin-bottom: 45px; text-shadow: 1px 1px 8px rgba(0,0,0,0.4); max-width: 1000px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    <p style="font-size: 24px; color: white; font-weight: 400; margin-bottom: 45px; text-shadow: 1px 1px 8px rgba(0,0,0,0.4); max-width: 1000px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                         Quality Residential Care for Adults and Older People with Mental Health Needs
                     </p>
 
