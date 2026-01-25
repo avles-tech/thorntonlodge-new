@@ -238,9 +238,7 @@
                             <div class="col-12 team-info text-center">
                                 <h3 class="mt-md-4 mt-3"><span class="sub-tittle-team">Senior Care Assistants</span></h3>
                                 <div class="team-img-staff">
-                                    <a data-toggle="modal" data-target="#myModal{{ $k }}">
-                                        <img src="{{ asset('Uploads/staff_images/staff1.jpg')  }}" class="img-fluid avatar_image large-image" alt="{{ $staff->name }} profile picture">
-                                    </a>
+                                    <img src="{{ asset('Uploads/staff_images/staff1.jpg')  }}" class="img-fluid avatar_image large-image" alt="Senior Care Assistants team photo">
                                 </div>
                                 <div class="row" style="margin-top:-15px;">
                                     <div class="col-12 text-center">

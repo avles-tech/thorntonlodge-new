@@ -56,9 +56,9 @@ h6 {
 }
 
 p {
-    font-size: 0.9em;
-    color: #8c9398;
-    line-height: 2em;
+    font-size: 1.05em;
+    color: #6B7280;
+    line-height: 1.8em;
 }
 
 ul {
@@ -113,7 +113,7 @@ ul {
 }
 
 .top-right-info li span.fa-twitter {
-    background: #5095CD;
+    background: #7BA5C7;
 }
 
 .top-right-info li span.fa-google-plus {
@@ -221,8 +221,8 @@ a.footer h2 a {
 .main-content.inner {}
 
 .head-first {
-    background: #5095CD;
-    border: 1px solid #5095CD;
+    background: #7BA5C7;
+    border: 1px solid #7BA5C7;
     position: relative;
     padding: 15px;
     color: #fff !important;
@@ -238,7 +238,7 @@ a.footer h2 a {
     left: 1%;
     width: 10px;
     height: 0;
-    border: 1px solid #5095CD;
+    border: 1px solid #7BA5C7;
 
 }
 
@@ -252,7 +252,7 @@ a.footer h2 a {
 /* this border color controlls the outside, thin border */
 .head-first:before {
     top: 45px;
-    border-color: #5095CD transparent transparent transparent;
+    border-color: #7BA5C7 transparent transparent transparent;
     border-width: 11px;
 }
 
@@ -275,27 +275,27 @@ a.footer h2 a {
 }
 
 .banner-info-w3ls a {
-    background: #5095CD;
-    padding: 11px 30px;
-    font-size: 14px;
+    background: #7BA5C7;
+    padding: 16px 40px;
+    font-size: 16px;
     letter-spacing: 1px;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 30px;
     display: inline-block;
-    box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-    -webkit-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-    -o-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
-    -ms-box-shadow: 0 12px 60px rgba(0, 0, 0, .2);
+    box-shadow: 0 8px 25px rgba(123, 165, 199, .3);
+    -webkit-box-shadow: 0 8px 25px rgba(123, 165, 199, .3);
+    -o-box-shadow: 0 8px 25px rgba(123, 165, 199, .3);
+    -moz-box-shadow: 0 8px 25px rgba(123, 165, 199, .3);
+    -ms-box-shadow: 0 8px 25px rgba(123, 165, 199, .3);
 }
 
 .banner-info-w3ls a:hover {
-    background: #F39C63;
+    background: #F4C4A0;
     color: #fff;
 }
 
 section.banner {
-    padding: 3em 0 4em 0;
+    padding: 5em 0 6em 0;
 }
 
 /* image layers effect */
@@ -308,8 +308,8 @@ section.banner {
 .img-effect img {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid #5095CD;
-    border-top: 5px solid #5095CD;
+    border-bottom: 5px solid #7BA5C7;
+    border-top: 5px solid #7BA5C7;
 
     border-radius: 5%;
     -webkit-border-radius: 5%;
@@ -323,7 +323,7 @@ section.banner {
 }
 
 .custom-circle img {
-    border: 2px solid #5095CD !important;
+    border: 2px solid #7BA5C7 !important;
     border-radius: 100% !important;
     padding: 20px !important;
     -webkit-border-radius: 5%;
@@ -395,7 +395,7 @@ section.banner {
 }
 
 .popup .close:hover {
-    color: #F39C63;
+    color: #F4C4A0;
 }
 
 
@@ -431,7 +431,7 @@ h3.tittle-move {
     font-weight: 600;
     letter-spacing: 1px;
     display: block;
-    background: #5095CD;
+    background: #7BA5C7;
     padding: 10px;
     text-transform: uppercase;
     left: 10px;
@@ -460,7 +460,7 @@ h3.tittle-move {
 .feature-grids span {
     font-size: 2em;
     vertical-align: middle;
-    background: #E8F1F8;
+    background: #F0F7FA;
     width: 90px;
     height: 90px;
     line-height: 2.7em;
@@ -483,7 +483,7 @@ h3.tittle-move {
 
 .bottom-gd:hover span,
 .bottom-gd2-active span {
-    background: #F39C63;
+    background: #F4C4A0;
     transition: 2s all;
     -webkit-transition: 2s all;
     -moz-transition: 2s all;
@@ -500,7 +500,7 @@ h3.tittle-move {
 /*--/counter--*/
 
 .stats {
-    background: #5095CD;
+    background: #7BA5C7;
     padding: 4em 0;
 }
 
@@ -517,7 +517,7 @@ h3.tittle-move {
     margin-bottom: 0;
     text-align: center;
     font-weight: 600;
-    color: #5095CD;
+    color: #7BA5C7;
 }
 
 .count-text {
@@ -525,7 +525,7 @@ h3.tittle-move {
     margin-top: 10px;
     margin-bottom: 0;
     text-align: center;
-    color: #5095CD;
+    color: #7BA5C7;
     font-weight: 500;
     text-space: 3px;
 }
@@ -534,7 +534,7 @@ h3.tittle-move {
     margin: 0 auto;
     float: none;
     display: table;
-    color: #5095CD;
+    color: #7BA5C7;
 }
 
 /*--//counter--*/
@@ -542,9 +542,10 @@ h3.tittle-move {
 /*--/team--*/
 
 .team-gd {
-    padding: 2em 2em;
+    padding: 2.5em 2.5em;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
 }
 
 .team-info h3 {
@@ -556,7 +557,7 @@ h3.tittle-move {
 
 .sub-tittle-team {
     font-size: 0.67em;
-    color: #5095CD;
+    color: #7BA5C7;
     font-weight: 700;
     letter-spacing: 2px;
     display: block;
@@ -573,7 +574,7 @@ h3.tittle-move {
     color: white !important;
     font-weight: 600 !important;
     letter-spacing: 1px;
-    background: #5095CD;
+    background: #7BA5C7;
     padding: 10px;
     text-transform: uppercase;
     left: 10px;
@@ -597,7 +598,7 @@ h3.tittle-move {
     font-weight: 600 !important;
     letter-spacing: 1px;
 
-    background: #5095CD;
+    background: #7BA5C7;
     padding: 10px;
     text-transform: uppercase;
     text-align: right;
@@ -634,7 +635,7 @@ h3.tittle-move {
 }
 
 .btn-info:hover {
-    background: #F39C63 !important;
+    background: #F4C4A0 !important;
 }
 
 .extra-logo {
@@ -646,20 +647,20 @@ h3.tittle-move {
     height: 90px;
     padding: 3px;
     margin-left: 13%;
-    border: 2px solid #5095CD;
+    border: 2px solid #7BA5C7;
     border-radius: 3px;
     margin-top: 10px;
 }
 
 .col-back-div-left {
     background: white;
-    border: 1px solid #5095CD;
-    border-right: 2px solid #5095CD;
+    border: 1px solid #7BA5C7;
+    border-right: 2px solid #7BA5C7;
 }
 
 .col-back-div-right {
     background: white;
-    border: 1px solid #5095CD;
+    border: 1px solid #7BA5C7;
 }
 
 ul.team-icons li {
@@ -713,7 +714,7 @@ ul.team-icons.new-inf li {
 .team-img img {
     width: 220px;
     height: 220px;
-    border: 2px solid #5095CD;
+    border: 2px solid #7BA5C7;
     border-radius: 8% !important;
     object-fit: cover;
 }
@@ -723,7 +724,7 @@ ul.team-icons.new-inf li {
     height: 500px;
     display: block;
     margin: 0 auto;
-    border: 2px solid #5095CD;
+    border: 2px solid #7BA5C7;
     border-radius: 8% !important;
     object-fit: cover;
 }
@@ -732,7 +733,7 @@ ul.team-icons.new-inf li {
     display: block;
     text-align: center;
     font-size: 14px;
-    color: #5095CD;
+    color: #7BA5C7;
     cursor: pointer;
     margin-top: 5px;
 }
@@ -740,7 +741,7 @@ ul.team-icons.new-inf li {
 .info-link-care-taker {
     display: block;
     font-size: 14px;
-    color: #5095CD;
+    color: #7BA5C7;
     cursor: pointer;
     margin-top: 5px;
 }
@@ -844,7 +845,7 @@ ul.tic-info li span {
 
 .detail ul li:hover span,
 .footer-properties:hover a {
-    color: #F39C63;
+    color: #F4C4A0;
 }
 
 .detail .location a,
@@ -907,7 +908,7 @@ p.sub-test {
 }
 
 p.sub-test span {
-    color: #5095CD;
+    color: #7BA5C7;
     font-size: 3em;
     margin-right: 0.3em;
 }
@@ -971,7 +972,7 @@ section.hand-crafted p {
     padding: 0.5em 1em;
     font-weight: 600;
     left: 4%;
-    color: #5095CD;
+    color: #7BA5C7;
 }
 
 /*--/--*/
@@ -1133,7 +1134,7 @@ h5.mt-0 {
 }
 
 .single-gd form input[type="submit"]:hover {
-    background: #F39C63;
+    background: #F4C4A0;
 }
 
 .media-body p {
@@ -1586,7 +1587,7 @@ input.checkbox:checked:after {
 }
 
 .contact-form button.btn:hover {
-    background: #F39C63;
+    background: #F4C4A0;
 }
 
 .map iframe {
@@ -1822,7 +1823,7 @@ li.facebook a {
 
 li.twitter a {
     color: #fff;
-    background: #5095CD;
+    background: #7BA5C7;
 }
 
 li.google a {

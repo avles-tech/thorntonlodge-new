@@ -1,4 +1,4 @@
-﻿@extends('layout.main')
+@extends('layout.main')
 @section('con_title')
     <title>{{$page_title}}</title>
     <meta name="description" content="{{$description}}">
@@ -19,15 +19,31 @@
         }
 
         .btn-cus:hover{
-            background: #F39C63 !important;
+            background: #F4C4A0 !important;
+        }
+
+        /* Enhanced Elder Care Design */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Parallax Hero */
+        /* Parallax Hero with Calm Animation */
         .parallax-hero {
             position: relative;
             overflow: hidden;
+            animation: slowZoom 20s ease-in-out infinite alternate;
         }
-        
+
+        @keyframes slowZoom {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
         .parallax-bg {
             position: absolute;
             top: 0;
@@ -37,6 +53,38 @@
             background-attachment: fixed;
             transform: translateZ(0);
             will-change: transform;
+        }
+
+        /* Gentle Fade In Animation for Hero Content */
+        @keyframes gentleFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            animation: gentleFadeIn 1.2s ease-out forwards;
+        }
+
+        .hero-content h1 {
+            animation: gentleFadeIn 1.4s ease-out 0.3s backwards;
+        }
+
+        .hero-content p:nth-of-type(1) {
+            animation: gentleFadeIn 1.4s ease-out 0.5s backwards;
+        }
+
+        .hero-content p:nth-of-type(2) {
+            animation: gentleFadeIn 1.4s ease-out 0.7s backwards;
+        }
+
+        .hero-content > div {
+            animation: gentleFadeIn 1.4s ease-out 0.9s backwards;
         }
         
         /* Modern Section Title Styles */
@@ -48,16 +96,16 @@
         
         .modern-section-title .title-tag {
             display: inline-block;
-            background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%);
+            background: linear-gradient(135deg, #7BA5C7 0%, #6B94B5 100%);
             color: white;
-            padding: 8px 28px;
+            padding: 10px 32px;
             border-radius: 50px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(110, 207, 233, 0.4);
+            box-shadow: 0 6px 20px rgba(123, 165, 199, 0.35);
         }
         
         .modern-section-title h3 {
@@ -72,17 +120,17 @@
         .modern-section-title .title-underline {
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, transparent 0%, #5095CD 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, #7BA5C7 50%, transparent 100%);
             margin: 25px auto 0;
             border-radius: 2px;
         }
         
         .modern-section-title.alt .title-tag {
-            background: linear-gradient(135deg, #5095CD 0%, #2C3E50 100%);
+            background: linear-gradient(135deg, #7BA5C7 0%, #2C3E50 100%);
         }
         
         .modern-section-title.alt .title-underline {
-            background: linear-gradient(90deg, transparent 0%, #5095CD 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, #7BA5C7 50%, transparent 100%);
         }
         
         /* Testimonial Carousel */
@@ -113,8 +161,8 @@
             height: 45px;
             border-radius: 50%;
             background: white;
-            border: 2px solid #5095CD;
-            color: #5095CD;
+            border: 2px solid #7BA5C7;
+            color: #7BA5C7;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -124,31 +172,33 @@
         }
         
         .carousel-btn:hover {
-            background: #5095CD;
-            color: white;
+            background: #F4C4A0 !important;
+            color: white !important;
             transform: scale(1.1);
+            border-color: #F4C4A0 !important;
         }
-        
+
         .carousel-indicators {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
-        
+
         .indicator-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            background: rgba(110, 207, 233, 0.3);
+            background: rgba(255, 255, 255, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.6);
         }
-        
+
         .indicator-dot.active {
-            background: #5095CD;
-            width: 30px;
-            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.95);
+            width: 35px;
+            border-radius: 6px;
         }
         
         /* Interactive Timeline */
@@ -165,7 +215,7 @@
             transform: translateX(-50%);
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, #5095CD 0%, #5095CD 100%);
+            background: linear-gradient(180deg, #7BA5C7 0%, #7BA5C7 100%);
         }
         
         .timeline-item {
@@ -203,7 +253,7 @@
             justify-content: center;
             font-weight: 800;
             font-size: 18px;
-            color: #5095CD;
+            color: #7BA5C7;
             box-shadow: 0 0 0 8px rgba(110, 207, 233, 0.2);
             z-index: 2;
         }
@@ -282,22 +332,25 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(110, 207, 233, 0.9);
+            width: 90px;
+            height: 90px;
+            background: rgba(123, 165, 199, 0.95);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 35px;
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             pointer-events: none;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 4px solid rgba(255, 255, 255, 0.9);
         }
-        
+
         .video-wrapper:hover .video-play-button {
-            transform: translate(-50%, -50%) scale(1.1);
-            background: rgba(110, 207, 233, 1);
+            transform: translate(-50%, -50%) scale(1.15);
+            background: rgba(244, 196, 160, 1);
+            box-shadow: 0 15px 50px rgba(244, 196, 160, 0.5);
         }
         
         .video-wrapper video:not([controls]) + .video-play-button {
@@ -514,36 +567,36 @@
 @endsection
 @section('content')
     <!-- Modern Hero Banner with Parallax - Full Width Text on Background -->
-    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(80, 149, 205, 0.4), rgba(44, 62, 80, 0.5)), url(../images/banner.jpg) no-repeat center center; background-size: cover; background-position: center center; padding: 120px 0 140px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
+    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(123, 165, 199, 0.35), rgba(107, 148, 181, 0.45)), url(../images/banner.jpg) no-repeat center center; background-size: cover; background-position: center center; padding: 20px 0 160px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
         <!-- Decorative Elements -->
         <div class="float-animation" style="position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(80px);"></div>
         <div class="float-animation" style="position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: rgba(80, 149, 205, 0.1); border-radius: 50%; filter: blur(100px); animation-delay: 1s;"></div>
 
         <div class="container" style="position: relative; z-index: 2;">
             <div class="row align-items-center justify-content-center">
-                <div class="col-lg-12 text-center scroll-animate-zoom">
+                <div class="col-lg-12 text-center hero-content">
                     <!-- Main Heading -->
-                    <h1 style="font-size: 68px; font-weight: 900; color: white; margin-bottom: 35px; line-height: 1.2; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); letter-spacing: -2px;">
+                    <h1 style="font-size: 72px; font-weight: 800; color: white; margin-bottom: 40px; line-height: 1.3; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); letter-spacing: -1px;">
                         Welcome to<br/>
-                        <span style="font-size: 80px; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); display: inline-block;">THORNTON LODGE</span>
+                        <span style="font-size: 86px; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: inline-block;">THORNTON LODGE</span>
                     </h1>
 
                     <!-- Subheading -->
-                    <p style="font-size: 26px; color: white; font-weight: 600; margin-bottom: 40px; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); max-width: 950px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+                    <p style="font-size: 28px; color: white; font-weight: 600; margin-bottom: 45px; text-shadow: 1px 1px 8px rgba(0,0,0,0.4); max-width: 1000px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                         Quality Residential Care for Adults and Older People with Mental Health Needs
                     </p>
 
                     <!-- Description -->
-                    <p style="color: rgba(255, 255, 255, 0.95); line-height: 1.9; font-size: 19px; margin-bottom: 55px; max-width: 1100px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); font-weight: 400;">
+                    <p style="color: rgba(255, 255, 255, 0.95); line-height: 1.9; font-size: 20px; margin-bottom: 60px; max-width: 1150px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 6px rgba(0,0,0,0.4); font-weight: 400;">
                         Thornton Lodge is a Residential Care Home for Adults and Older People with Mental Health Illness, registered under the Health and Social Care Act 2008 by the Care Quality Commission. Established in 1987, we have continued to grow in excellence, providing high-quality care and improved services.
                     </p>
 
                     <!-- CTA Buttons -->
-                    <div style="margin-top: 55px;">
-                        <a href="{{ route('about') }}" class="ripple" style="display: inline-block; background: white; color: #5095CD; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; margin: 0 12px 15px 12px; box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+                    <div style="margin-top: 60px;">
+                        <a href="{{ route('about') }}" class="ripple" style="display: inline-block; background: white; color: #7BA5C7; padding: 22px 55px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; margin: 0 15px 20px 15px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
                             <i class="fa fa-info-circle" style="margin-right: 12px;"></i>Learn More About Us
                         </a>
-                        <a href="{{ route('contact') }}" class="ripple" style="display: inline-block; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); color: white; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; margin: 0 12px 15px 12px; box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25); border: 2px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+                        <a href="{{ route('contact') }}" class="ripple" style="display: inline-block; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(15px); color: white; padding: 22px 55px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; margin: 0 15px 20px 15px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); border: 2px solid rgba(255, 255, 255, 0.5); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
                             <i class="fa fa-phone" style="margin-right: 12px;"></i>Contact Us Today
                         </a>
                     </div>
@@ -554,60 +607,62 @@
     <!-- //banner -->
     </div>
     
-    <!--/Video Section -->
-    <section style="background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%); padding: 80px 0;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="scroll-animate-zoom" style="background: white; padding: 60px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.12); margin-bottom: 60px;">
-                        <!-- Modern Section Title -->
-                        <div class="modern-section-title">
-                            <div class="title-tag">Introduction</div>
-                            <h3>Introduction to Thornton Lodge</h3>
-                            <div class="title-underline"></div>
-                        </div>
-                        
-                        <div class="video-wrapper" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-                            <video width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_THUMBNAIL.png') }}" onclick="this.controls=true; this.play();">
-                                <source src="{{ asset('videos/THORNTON_LODGE_PROMO_VIDEO_4K.mp4') }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="video-play-button">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </div>
-                    </div>
+    <!--/Video Section - Full Width Modern Design -->
+    <!-- Introduction Video - White Background -->
+    <section style="background: #ffffff; padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <div class="scroll-animate-zoom">
+                <!-- Modern Section Title -->
+                <div class="modern-section-title" style="margin-bottom: 60px;">
+                    <div class="title-tag">Introduction</div>
+                    <h3 style="font-size: 48px; margin-top: 20px;">Introduction to Thornton Lodge</h3>
+                    <div class="title-underline"></div>
+                </div>
 
-                    <div class="scroll-animate-zoom" style="background: white; padding: 60px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.12);">
-                        <!-- Modern Section Title -->
-                        <div class="modern-section-title alt">
-                            <div class="title-tag">From Our Founder</div>
-                            <h3>A note from Joe, our Chairman and founder</h3>
-                            <div class="title-underline"></div>
-                        </div>
-                        
-                        <div class="video-wrapper" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
-                            <video width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_JOE.png') }}" onclick="this.controls=true; this.play();">
-                                <source src="{{ asset('videos/THORNTON_LODGE_JOE.mp4') }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="video-play-button">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </div>
+                <div class="video-wrapper" style="position: relative; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 60px rgba(0,0,0,0.15); max-width: 100%;">
+                    <video width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_THUMBNAIL.png') }}" onclick="this.controls=true; this.play();" style="display: block;">
+                        <source src="{{ asset('videos/THORNTON_LODGE_PROMO_VIDEO_4K.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-play-button">
+                        <i class="fa fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Message - Light Blue Background -->
+    <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <div class="scroll-animate-zoom">
+                <!-- Modern Section Title -->
+                <div class="modern-section-title alt" style="margin-bottom: 60px;">
+                    <div class="title-tag" style="background: linear-gradient(135deg, #7BA5C7 0%, #6B94B5 100%);">From Our Founder</div>
+                    <h3 style="font-size: 48px; margin-top: 20px;">A note from Joe, our Chairman and founder</h3>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="video-wrapper" style="position: relative; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 60px rgba(0,0,0,0.15); max-width: 100%;">
+                    <video width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_JOE.png') }}" onclick="this.controls=true; this.play();" style="display: block;">
+                        <source src="{{ asset('videos/THORNTON_LODGE_JOE.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-play-button">
+                        <i class="fa fa-play"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Interactive Timeline -->
-    <section style="background: #f8f9fa; padding: 80px 0;">
-        <div class="container">
+    <!-- Interactive Timeline - Full Width -->
+    <section style="background: #ffffff; padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
             <!-- Modern Section Title -->
-            <div class="modern-section-title scroll-animate">
+            <div class="modern-section-title scroll-animate" style="margin-bottom: 80px;">
                 <div class="title-tag">Our Journey</div>
-                <h3>35+ Years of Excellence</h3>
+                <h3 style="font-size: 48px; margin-top: 20px;">35+ Years of Excellence</h3>
                 <div class="title-underline"></div>
             </div>
 
@@ -651,13 +706,13 @@
         </div>
     </section>
     
-    <section class="about py-lg-5 py-md-5 py-5">
-        <div class="container">
+    <section class="about py-lg-5 py-md-5 py-5" style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0 !important;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
             <div class="inner-sec-w3pvt py-lg-5 py-3">
                 <!-- Modern Section Title -->
-                <div class="modern-section-title scroll-animate">
+                <div class="modern-section-title scroll-animate" style="margin-bottom: 60px;">
                     <div class="title-tag">About Us</div>
-                    <h3>ABOUT</h3>
+                    <h3 style="font-size: 48px; margin-top: 20px;">ABOUT THORNTON LODGE</h3>
                     <div class="title-underline"></div>
                 </div>
                 
@@ -665,12 +720,12 @@
                 
                 <div class="feature-grids row mt-5 mb-lg-5 mb-3 text-center">
                     <div class="col-lg-8 col-md-12 scroll-animate-left" data-aos="fade-up" style="margin-bottom: 25px;">
-                        <div class="bottom-gd ripple" style="background: white; padding: 45px 35px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; border-top: 5px solid #5095CD; cursor: pointer;">
-                            <div style="background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 6px 20px rgba(110, 207, 233, 0.4);">
+                        <div class="bottom-gd ripple" style="background: white; padding: 45px 35px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; border-top: 5px solid #7BA5C7; cursor: pointer;">
+                            <div style="background: linear-gradient(135deg, #7BA5C7 0%, #4080B8 100%); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 6px 20px rgba(110, 207, 233, 0.4);">
                                 <span class="fa fa-lightbulb-o" aria-hidden="true" style="font-size: 40px; color: white;"></span>
                             </div>
                             <h3 class="my-4" style="font-size: 24px; font-weight: 600;">Helpful Advice</h3>
-                            <p style="line-height: 1.8; font-size: 16px; color: #555;">Please provide details of possible placement as well as the service user's needs. To discuss facilities, fees, arrange a visit or if you just want a quick chat with any of our management staff, please give us a call on 0208 684 1056 or alternatively you can email us at <a style="color: #5095CD; text-decoration: none; font-weight: 600;">admin@thorntonlodgecare.com</a></p>
+                            <p style="line-height: 1.8; font-size: 16px; color: #555;">Please provide details of possible placement as well as the service user's needs. To discuss facilities, fees, arrange a visit or if you just want a quick chat with any of our management staff, please give us a call on 0208 684 1056 or alternatively you can email us at <a style="color: #7BA5C7; text-decoration: none; font-weight: 600;">admin@thorntonlodgecare.com</a></p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 scroll-animate-right" data-aos="fade-up" style="margin-bottom: 25px;">
@@ -685,63 +740,76 @@
                 </div>
 
                 <!-- testimonials with carousel -->
-                <div class="testimonials py-md-5 py-5" style="margin-top: 50px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); margin-left: -15px; margin-right: -15px; padding: 70px 15px !important;">
-                    <div class="container">
-                        <!-- Modern Section Title -->
-                        <div class="modern-section-title scroll-animate">
-                            <div class="title-tag">What People Say</div>
-                            <h3>TESTIMONIALS</h3>
-                            <div class="title-underline"></div>
-                        </div>
-                        
-                        <div class="testimonial-carousel">
-                            <div class="row justify-content-center">
-                                @if(count($testimonials)>0)
-                                    <div class="col-lg-10">
-                                        <div class="testimonial-track" id="testimonialTrack">
-                                            @foreach($testimonials as $index => $testimonial)
-                                                <div class="testimonial-slide">
-                                                    <div style="background: white; padding: 50px 45px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); position: relative; min-height: 200px; display: flex; align-items: center;">
-                                                        <div style="position: absolute; top: -15px; left: 30px; background: #5095CD; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(110, 207, 233, 0.4);">
-                                                            <span class="fa fa-quote-left" aria-hidden="true" style="color: white; font-size: 24px;"></span>
-                                                        </div>
-                                                        <p style="padding: 0; background: transparent; border: none; box-shadow: none; line-height: 1.9; font-size: 18px; margin: 25px 0 0 0; color: #333; text-align: center;">{{ $testimonial->comment }}</p>
-                                                    </div>
+    </section>
+
+    <!-- Testimonials - Full Width Section -->
+    <section style="background: linear-gradient(135deg, #7BA5C7 0%, #6B94B5 100%); padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <!-- Modern Section Title -->
+            <div class="modern-section-title scroll-animate" style="margin-bottom: 60px;">
+                <div class="title-tag" style="background: rgba(255,255,255,0.25); color: white; border: 1px solid rgba(255,255,255,0.3);">What People Say</div>
+                <h3 style="font-size: 48px; margin-top: 20px; color: white;">TESTIMONIALS</h3>
+                <div class="title-underline" style="background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);"></div>
+            </div>
+
+            <div class="testimonials"
+
+                <div class="testimonial-carousel">
+                    <div class="row justify-content-center">
+                        @if(count($testimonials)>0)
+                            <div class="col-lg-12">
+                                <div class="testimonial-track" id="testimonialTrack">
+                                    @foreach($testimonials as $index => $testimonial)
+                                        <div class="testimonial-slide">
+                                            <div style="background: rgba(255,255,255,0.98); padding: 60px 50px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); position: relative; min-height: 250px; display: flex; align-items: center; backdrop-filter: blur(10px);">
+                                                <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #F4C4A0; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(244, 196, 160, 0.5);">
+                                                    <span class="fa fa-quote-left" aria-hidden="true" style="color: white; font-size: 28px;"></span>
                                                 </div>
-                                            @endforeach
+                                                <p style="padding: 0; background: transparent; border: none; box-shadow: none; line-height: 2; font-size: 20px; margin: 35px 0 0 0; color: #333; text-align: center; font-weight: 400;">{{ $testimonial->comment }}</p>
+                                            </div>
                                         </div>
-                                        
-                                        <!-- Carousel Controls -->
-                                        <div class="carousel-controls">
-                                            <button class="carousel-btn" onclick="previousTestimonial()">
-                                                <i class="fa fa-chevron-left"></i>
-                                            </button>
-                                            <button class="carousel-btn" onclick="nextTestimonial()">
-                                                <i class="fa fa-chevron-right"></i>
-                                            </button>
-                                        </div>
-                                        
-                                        <!-- Indicators -->
-                                        <div class="carousel-indicators" id="testimonialIndicators"></div>
-                                    </div>
-                                @else
-                                    <p class="noresult"><i class="fa fa-info-circle"></i> No testimonial results found</p>
-                                @endif
+                                    @endforeach
+                                </div>
+
+                                <!-- Carousel Controls -->
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn" onclick="previousTestimonial()" style="background: rgba(255,255,255,0.95); border: 2px solid rgba(255,255,255,0.3); color: #7BA5C7; width: 55px; height: 55px;">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </button>
+                                    <button class="carousel-btn" onclick="nextTestimonial()" style="background: rgba(255,255,255,0.95); border: 2px solid rgba(255,255,255,0.3); color: #7BA5C7; width: 55px; height: 55px;">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Indicators -->
+                                <div class="carousel-indicators" id="testimonialIndicators"></div>
                             </div>
-                        </div>
+                        @else
+                            <p class="noresult" style="color: white;"><i class="fa fa-info-circle"></i> No testimonial results found</p>
+                        @endif
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about py-lg-5 py-md-5 py-5" style="background: #ffffff; padding: 100px 0 !important;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
                 <!-- //testimonials -->
 
                 <!-- services -->
-                <div class="fetured-info" style="margin-top: 80px; padding: 70px 0; background: #f8f9fa;">
-                    <div class="container">
-                        <!-- Modern Section Title -->
-                        <div class="modern-section-title alt scroll-animate">
-                            <div class="title-tag">Learn About Us</div>
-                            <h3>WHO WE ARE</h3>
-                            <div class="title-underline"></div>
-                        </div>
+        </div>
+    </section>
+
+    <!-- Who We Are - Full Width Section -->
+    <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <!-- Modern Section Title -->
+            <div class="modern-section-title alt scroll-animate" style="margin-bottom: 60px;">
+                <div class="title-tag">Learn About Us</div>
+                <h3 style="font-size: 48px; margin-top: 20px;">WHO WE ARE</h3>
+                <div class="title-underline"></div>
+            </div>
                         
                         <div class="row fetured-sec" style="align-items: center; margin-bottom: 50px;">
                             <div class="col-lg-5 col-md-12 scroll-animate-left" style="margin-bottom: 30px;">
@@ -762,7 +830,7 @@
 
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="bottom-gd fea active scroll-animate-zoom" data-aos="fade-up" style="background: white; padding: 45px 50px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-left: 6px solid #5095CD;">
+                                <div class="bottom-gd fea active scroll-animate-zoom" data-aos="fade-up" style="background: white; padding: 45px 50px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-left: 6px solid #7BA5C7;">
                                     <p class="text-justify" style="font-size: 16px; line-height: 1.9; margin-bottom: 25px; color: #555;">Thornton Lodge is a Residential Home registered under the Health and Social Care Act 2008 by the Care Quality Commission.</p>
 
                                     <p class="text-justify" style="font-size: 16px; line-height: 1.9; margin: 0; color: #555;">The Home is visited between regular intervals, both announced and unannounced by the Care Quality Commission. We are proud to highlight that our inspections are overall rated as <strong style="color: #27ae60; font-size: 18px;">"Good"</strong>. Our reports are all publicly available to read via the Care Quality Commission's website.</p>
@@ -818,7 +886,7 @@
                                                     <a class="admin" href="#" style="font-weight: 700; font-size: 20px; color: #333; text-decoration: none; display: block; margin-bottom: 10px;">{{ $room->title }}</a>
                                                 </div>
                                                 <p style="line-height: 1.7; margin-bottom: 20px; color: #666; font-size: 15px;">{{ $room->excerpt }}</p>
-                                                <a href="{{ route('contact') }}" class="ripple" style="display: inline-block; background: #5095CD; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(110, 207, 233, 0.3);">Enquire Now</a>
+                                                <a href="{{ route('contact') }}" class="ripple" style="display: inline-block; background: #7BA5C7; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(110, 207, 233, 0.3);">Enquire Now</a>
                                             </div>
                                             <!--//Property_info-->
                                         </div>
@@ -832,7 +900,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="text-center scroll-animate" style="margin-top: 30px; margin-bottom: 40px;">
-                                    <a href="{{ route('vacancies') }}" class="btn btn-info btn-lg ripple" style="background: linear-gradient(135deg, #5095CD 0%, #4080B8 100%); padding: 16px 50px; border: none; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 6px 25px rgba(110, 207, 233, 0.4); font-size: 18px; font-weight: 600; color: white; text-decoration: none; display: inline-block;">See More Rooms <i class="fa fa-arrow-right" style="margin-left: 10px;"></i></a>
+                                    <a href="{{ route('vacancies') }}" class="btn btn-info btn-lg ripple" style="background: linear-gradient(135deg, #7BA5C7 0%, #4080B8 100%); padding: 16px 50px; border: none; border-radius: 30px; transition: all 0.3s ease; box-shadow: 0 6px 25px rgba(110, 207, 233, 0.4); font-size: 18px; font-weight: 600; color: white; text-decoration: none; display: inline-block;">See More Rooms <i class="fa fa-arrow-right" style="margin-left: 10px;"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -845,7 +913,7 @@
     <!-- //ab -->
 
     <!--/counter with animation -->
-    <section class="stats room-status scroll-animate" style="background: linear-gradient(135deg, #5095CD 0%, #2C3E50 100%); padding: 60px 0; position: relative; overflow: hidden;">
+    <section class="stats room-status scroll-animate" style="background: linear-gradient(135deg, #7BA5C7 0%, #2C3E50 100%); padding: 60px 0; position: relative; overflow: hidden;">
         <div class="container">
             <div class="row text-center justify-content-center">
                 <div class="col-lg-5 col-md-6 scroll-animate-left" style="margin-bottom: 30px;">
@@ -884,43 +952,6 @@
                     accessStdVr();
                 }
             </script>
-        </div>
-        <div id="tourrightDIV">
-            <div class="middle-tem-insidel" >
-                <div class="progress-info">
-                    <div class="left-build-main-temps" style="width: 100% !important;">
-                        <!-- Modern Section Title -->
-                        <div class="modern-section-title scroll-animate" style="text-align: left; margin-left: 15px; margin-top: 40px; margin-bottom: 40px;">
-                            <div class="title-tag">What We Offer</div>
-                            <h3 style="text-align: left;">OUR SERVICES</h3>
-                            <div class="title-underline" style="margin-left: 0;"></div>
-                        </div>
-
-                        <ul class="tic-info list-unstyled">
-                            <li class="progress-tittle scroll-animate-delay-1">
-                                <span class="fa fa-hotel"></span> Accommodation
-                            </li>
-                            <li class="progress-tittle scroll-animate-delay-2">
-                                <span class="fa fa-plus-circle"></span> Admission Criteria
-                            </li>
-                            <li class="progress-tittle scroll-animate-delay-3">
-                                <span class="fa fa-thumbs-o-up"></span> Facilities
-                            </li>
-                            <li class="progress-tittle scroll-animate-delay-4">
-                                <span class="fa fa-bar-chart-o"></span> Activities & Events
-                            </li>
-                            <li class="progress-tittle scroll-animate-delay-1">
-                                <span class="fa fa-hospital-o"></span> Principal of Care
-                            </li>
-                            <li class="progress-tittle scroll-animate-delay-2">
-                                <span class="fa fa-bullseye"></span> Staff Training
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
         </div>
         <!--//middle section -->
     </div>
