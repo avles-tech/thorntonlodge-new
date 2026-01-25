@@ -23,8 +23,8 @@ class StaffController extends Controller
 
         foreach ($staffs AS $k => $staff ){
             foreach ($categories AS $n => $category){
-                if($staff->staff_category_id == $category->id){
-                    $staffs[$k]['category'] = $category->title;
+                if($staff->category_id == $category->id){
+                    $staffs[$k]['category'] = $category->name;
                 }
             }
         }
@@ -83,9 +83,9 @@ class StaffController extends Controller
             // Create Post
             $staff = new Staff();
             $staff->image = $fileNameToStore;
-            $staff->staff_category_id = $request->input('staff_category_id');
+            $staff->category_id = $request->input('staff_category_id');
             $staff->name = $request->input('name');
-            $staff->qualification = $request->input('qualification');
+            $staff->position = $request->input('qualification');
             $staff->bio = $request->input('bio');
             $staff->created_at = $NowTime;
             $staff->save();
@@ -110,8 +110,8 @@ class StaffController extends Controller
         $categories =  StaffCategory::get();
 
         foreach ($categories AS $n => $category){
-            if($staff->staff_category_id == $category->id){
-                $staff['category'] = $category->title;
+            if($staff->category_id == $category->id){
+                $staff['category'] = $category->name;
             }
         }
 
@@ -163,9 +163,9 @@ class StaffController extends Controller
             // Update Staff
             Staff::where('id',$request->id)
                 ->update([
-                    'staff_category_id' => $request->staff_category_id,
+                    'category_id' => $request->staff_category_id,
                     'name' => $request->name,
-                    'qualification' => $request->qualification,
+                    'position' => $request->qualification,
                     'bio' => $request->bio,
                     'updated_at' => $NowTime,
 

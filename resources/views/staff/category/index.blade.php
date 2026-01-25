@@ -53,7 +53,7 @@
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Title <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input class="form-control col-md-7 col-xs-12 testword" data-validate-words="1" name="title" value="{{ $tagscategory->title }}" required="required" type="text">
+                                            <input class="form-control col-md-7 col-xs-12 testword" data-validate-words="1" name="title" value="{{ $tagscategory->name }}" required="required" type="text">
                                         </div>
                                     </div>
                                     <input class="form-control col-md-7 col-xs-12 testword" data-validate-words="1" name="id" value="{{ $tagscategory->id }}" required="required" type="hidden">
@@ -160,7 +160,7 @@
                                             <td>
                                                 {{ ($k+1) }}
                                             </td>
-                                            <td><div class="truncate-ellipsis-title">{{ $tag->title }}</div></td>
+                                            <td><div class="truncate-ellipsis-title">{{ $tag->name }}</div></td>
                                             <td>{{ $tag->created_at }}</td>
                                             <td>{{ $tag->updated_at }}</td>
                                             <td>
@@ -168,7 +168,7 @@
                                                     <a  title="Edit" class="label label-success lbl_pad" href="/staff-category/edit/{{$tag->id}}">
                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                     </a>
-                                                    <a title="Delete" data-toggle="modal" onclick="delete_data('{{ $tag->id }}','{{ $tag->title }}')" data-target=".bs-delete-modal-sm" class="label label-danger lbl_pad" href="#">
+                                                    <a title="Delete" data-toggle="modal" onclick="delete_data('{{ $tag->id }}','{{ $tag->name }}')" data-target=".bs-delete-modal-sm" class="label label-danger lbl_pad" href="#">
                                                         &nbsp;<i class="ace-icon fa fa-trash-o bigger-150"></i>&nbsp;
                                                     </a>
                                                 </div>

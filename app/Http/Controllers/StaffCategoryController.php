@@ -43,14 +43,16 @@ class StaffCategoryController extends Controller
         try{
             // Create Category
             $category = new StaffCategory();
-            $category->title = $request->input('title');
+            $category->name = $request->input('title');
+            $category->slug = \Illuminate\Support\Str::slug($request->input('title'));
+            $category->order = 1;
             $category->created_at = $NowTime;
             $category->save();
             $sucessMsg='The <strong>'.$request->input('title').'</strong> Staff category has been successfully added!';
             return redirect('/staff-category')->with('success',$sucessMsg);
         }
         catch(Exception $exception) {
-            $errormsg="Invalid Title, This \"<strong>".$request->input('title')."</strong>\" title already stored in the database, Please use another title!";
+            $errormsg="Error! ".$exception->getMessage();
             return redirect('/staff-category')->with('error',$errormsg);
         }
     }
@@ -91,7 +93,8 @@ class StaffCategoryController extends Controller
             // Update Category
             StaffCategory::where('id',$request->id)
                 ->update([
-                    'title' => $request->title,
+                    'name' => $request->title,
+                    'slug' => \Illuminate\Support\Str::slug($request->title),
                     'updated_at' => $NowTime,
                 ]);
 
@@ -99,7 +102,7 @@ class StaffCategoryController extends Controller
             return redirect('/staff-category')->with('success',$sucessMsg);
         }
         catch(Exception $exception) {
-            $errormsg="Invalid Title, This \"<strong>".$request->input('title')."</strong>\" title already stored in the database, Please use another Title!";
+            $errormsg="Error! ".$exception->getMessage();
             return redirect('/staff-category')->with('error',$errormsg);
         }
     }
@@ -107,7 +110,7 @@ class StaffCategoryController extends Controller
     public function destroy($id)
     {
         $category =StaffCategory::find($id);
-        $getcategoryName=$category->title;
+        $getcategoryName=$category->name;
         $category->delete();
         $sucessMsg='The <strong>'.$getcategoryName.'</strong> Staff category record has been deleted!';
         return redirect('/staff-category')->with('success', $sucessMsg);

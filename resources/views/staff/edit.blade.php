@@ -89,10 +89,10 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Staff Category</label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <select class="form-control" name="staff_category_id" data-placeholder="Choose Staff SCategory...">
+                                    <select class="form-control" name="staff_category_id" data-placeholder="Choose Staff Category...">
                                         @if(count($categories)>0)
                                             @foreach($categories as $k=> $category)
-                                                <option value="{{ $category->id }}" <?php if($staff->staff_category_id ==$category->id){ echo 'selected';} ?>>{{ $category->title }}</option>
+                                                <option value="{{ $category->id }}" <?php if($staff->category_id ==$category->id){ echo 'selected';} ?>>{{ $category->name }}</option>
                                             @endforeach
                                         @endif
                                     </select>
@@ -107,7 +107,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Qualification</label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <input type="text" name="qualification" value="{{ $staff->qualification }}" placeholder="Staff qualification (optional)..." class="form-control" />
+                                    <input type="text" name="qualification" value="{{ $staff->position }}" placeholder="Staff qualification (optional)..." class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group">
