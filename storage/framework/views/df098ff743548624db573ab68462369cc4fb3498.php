@@ -566,7 +566,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     <!-- Modern Hero Banner with Parallax - Full Width Text on Background -->
-    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.6)), url(../images/banner_.jpg) no-repeat center center; background-size: cover; background-position: center center; padding: 20px 0 160px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
+    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.6)), url(../images/banner_.jpg) no-repeat center bottom; background-size: cover; background-position: center bottom; padding: 20px 0 160px 0; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; background-attachment: fixed;">
         <!-- Decorative Elements -->
         <div class="float-animation" style="position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(80px);"></div>
         <div class="float-animation" style="position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: rgba(80, 149, 205, 0.1); border-radius: 50%; filter: blur(100px); animation-delay: 1s;"></div>
@@ -577,7 +577,7 @@
                     <!-- Main Heading -->
                     <h1 style="font-size: 52px; font-weight: 400; color: white; margin-bottom: 40px; line-height: 1.4; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); letter-spacing: 0.5px;">
                         Welcome to<br/>
-                        <span style="font-size: 62px; font-weight: 500; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: inline-block; letter-spacing: 1px;">THORNTON LODGE</span>
+                        <span style="font-size: 62px; font-weight: 500; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: inline-block; letter-spacing: 1px;">Thornton Lodge</span>
                     </h1>
 
                     <!-- Subheading -->
