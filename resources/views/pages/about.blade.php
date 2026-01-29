@@ -136,9 +136,9 @@
 @endsection
 @section('content')
     <!-- Hero Section -->
-    <section class="hero-about">
+    <section class="hero-about banner scroll-animate parallax-hero">
         <div class="container" style="max-width: 1600px; padding: 0 40px;">
-            <div data-aos="fade-up">
+            <div class="hero-content">
                 <h1>Who We Are</h1>
                 <p>A calm, cheerful and relaxed family-like environment pervades throughout our home. This is influenced by our dedicated staff who embrace the philosophy of care through ongoing training, skills and knowledge.</p>
             </div>
@@ -148,12 +148,13 @@
     <!-- General Aims Section - White Background -->
     <section style="background: #ffffff; padding: 100px 0;">
         <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
-            <div class="modern-section-title" data-aos="fade-up">
+            <div class="modern-section-title scroll-animate">
                 <div class="title-tag">OUR MISSION</div>
                 <h3>General Aims and Objectives</h3>
+                <div class="title-underline"></div>
             </div>
 
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="row scroll-animate-zoom">
                 <div class="col-lg-12">
                     <div class="about-card">
                         <ul>
@@ -168,8 +169,8 @@
                 </div>
             </div>
 
-            <div class="row mt-5" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-6 mb-4">
+            <div class="row mt-5">
+                <div class="col-lg-6 mb-4 scroll-animate-left">
                     <div class="about-card">
                         <ul>
                             <li>Hold regular meetings to promote community bonding and facilitate them to develop social relationships of sufficient strength.</li>
@@ -179,7 +180,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-6 mb-4 scroll-animate-right">
                     <div class="about-card">
                         <ul>
                             <li>Offer advice on welfare benefits and liaise with the voluntary and statutory services to provide all help and resources.</li>
@@ -191,8 +192,8 @@
                 </div>
             </div>
 
-            <div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
-                <div class="col-lg-12">
+            <div class="row mt-5">
+                <div class="col-lg-12 scroll-animate-zoom">
                     <div class="about-card">
                         <ul>
                             <li>Consult Service users in the preparation of menus and provide choice of meals to individual likes and dislikes to meet dietary needs.</li>
@@ -209,14 +210,14 @@
     <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
         <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
             <div class="row align-items-center">
-                <div class="col-lg-8 mb-4" data-aos="fade-right">
+                <div class="col-lg-8 mb-4 scroll-animate-right">
                     <div class="philosophy-box">
                         <div class="title-tag" style="background: rgba(255,255,255,0.2); margin-bottom: 30px;">PHILOSOPHY</div>
                         <h4>Our Home Philosophy</h4>
                         <p>Thornton Lodge has a friendly, family-like environment where care is delivered on an individual or group basis at regular meetings. This improves interaction and fosters understanding of one another's needs to help residents express their feelings, identify their rights, independence, fulfilment and self esteem.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4" data-aos="fade-left">
+                <div class="col-lg-4 mb-4 scroll-animate-left">
                     <div class="image-circle">
                         <img src="/images/buddha-giant.jpg" alt="Philosophy">
                     </div>
@@ -228,18 +229,19 @@
     <!-- Equal Opportunity Section - White Background -->
     <section style="background: #ffffff; padding: 100px 0;">
         <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
-            <div class="modern-section-title" data-aos="fade-up">
+            <div class="modern-section-title scroll-animate">
                 <div class="title-tag">OUR VALUES</div>
                 <h3>Equal Opportunity</h3>
+                <div class="title-underline"></div>
             </div>
 
             <div class="row align-items-center">
-                <div class="col-lg-4 mb-4" data-aos="fade-right">
+                <div class="col-lg-4 mb-4 scroll-animate-left">
                     <div class="image-circle">
                         <img src="/images/justitia-2638651_1920.jpg" alt="Equal Opportunity">
                     </div>
                 </div>
-                <div class="col-lg-8 mb-4" data-aos="fade-left">
+                <div class="col-lg-8 mb-4 scroll-animate-right">
                     <div class="about-card">
                         <ul>
                             <li>The Home does ensure that each service user is treated with dignity and given the opportunity to act and think without hindrance by anyone. Every service user is treated with equal regard irrespective of his or her religion, race, cultural origin, gender, sexual orientation or disability.</li>
@@ -256,13 +258,14 @@
     <!-- Meals Section - Light Blue Background -->
     <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
         <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
-            <div class="modern-section-title" data-aos="fade-up">
+            <div class="modern-section-title scroll-animate">
                 <div class="title-tag">DINING</div>
                 <h3>Meals & Dining Experience</h3>
+                <div class="title-underline"></div>
             </div>
 
             <div class="row align-items-center">
-                <div class="col-lg-8 mb-4" data-aos="fade-right">
+                <div class="col-lg-8 mb-4 scroll-animate-right">
                     <div class="about-card">
                         <h4 style="color: #7BA5C7; font-weight: 700; margin-bottom: 25px;">Meal Times</h4>
                         <p style="font-size: 17px; line-height: 1.9; color: #555; margin-bottom: 25px;">
@@ -276,8 +279,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4" data-aos="fade-left">
-                    <div class="image-circle">
+                <div class="col-lg-4 mb-4 scroll-animate-left">
+                    <div class="image-circle float-animation">
                         <img src="/images/icon-meals.jpg" alt="Meals">
                     </div>
                 </div>

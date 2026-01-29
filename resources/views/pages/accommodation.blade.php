@@ -196,9 +196,9 @@
 @endsection
 @section('content')
     <!-- Hero Section -->
-    <section class="hero-accommodation">
+    <section class="hero-accommodation banner scroll-animate parallax-hero">
         <div class="container" style="max-width: 1600px; padding: 0 40px;">
-            <div data-aos="fade-up">
+            <div class="hero-content">
                 <h1>Accommodation</h1>
                 <p style="font-size: 20px; max-width: 700px; margin: 20px auto 0; line-height: 1.8;">
                     Comfortable, safe and welcoming living spaces designed for your wellbeing
@@ -211,7 +211,7 @@
     <section style="background: #ffffff; padding: 100px 0;">
         <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
             <div class="row align-items-center">
-                <div class="col-lg-8 mb-4" data-aos="fade-right">
+                <div class="col-lg-8 mb-4 scroll-animate-right">
                     <div class="accommodation-card">
                         <h3 style="color: #7BA5C7; font-weight: 700; margin-bottom: 30px; font-size: 32px;">Our Living Spaces</h3>
                         <p>Thornton Lodge offers accommodation for 45 residents and proudly offers all single rooms, some of which are ensuite.</p>
@@ -222,8 +222,8 @@
                         <p>Visit our <a href="{{ route('gallery') }}">Gallery</a> to view our home.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4" data-aos="fade-left">
-                    <div class="image-circle">
+                <div class="col-lg-4 mb-4 scroll-animate-left">
+                    <div class="image-circle float-animation">
                         <img src="/images/accomensation.jpg" alt="Accommodation">
                     </div>
                 </div>
@@ -234,32 +234,33 @@
     <!-- Features Section - Light Blue Background -->
     <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
         <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
-            <div class="modern-section-title" data-aos="fade-up">
+            <div class="modern-section-title scroll-animate">
                 <div class="title-tag">FACILITIES</div>
                 <h3>Key Features</h3>
+                <div class="title-underline"></div>
             </div>
 
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon-box">
+                <div class="col-lg-3 col-md-6 mb-4 scroll-animate-zoom scroll-animate-delay-1">
+                    <div class="feature-icon-box ripple">
                         <i class="fa fa-bed"></i>
                         <h5>45 Single Rooms</h5>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon-box">
+                <div class="col-lg-3 col-md-6 mb-4 scroll-animate-zoom scroll-animate-delay-2">
+                    <div class="feature-icon-box ripple">
                         <i class="fa fa-arrows-v"></i>
                         <h5>2 Passenger Lifts</h5>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon-box">
+                <div class="col-lg-3 col-md-6 mb-4 scroll-animate-zoom scroll-animate-delay-3">
+                    <div class="feature-icon-box ripple">
                         <i class="fa fa-users"></i>
                         <h5>4 Sitting Areas</h5>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-icon-box">
+                <div class="col-lg-3 col-md-6 mb-4 scroll-animate-zoom scroll-animate-delay-4">
+                    <div class="feature-icon-box ripple">
                         <i class="fa fa-cutlery"></i>
                         <h5>2 Dining Areas</h5>
                     </div>
@@ -272,15 +273,16 @@
     @if(count($rooms)>0)
     <section style="background: #ffffff; padding: 100px 0;">
         <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
-            <div class="modern-section-title" data-aos="fade-up">
+            <div class="modern-section-title scroll-animate">
                 <div class="title-tag">AVAILABILITY</div>
                 <h3>Available Rooms</h3>
+                <div class="title-underline"></div>
             </div>
 
             <div class="row">
                 @foreach($rooms as $room)
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="room-card">
+                    <div class="col-lg-4 col-md-6 mb-4 scroll-animate-zoom">
+                        <div class="room-card ripple">
                             <div style="position: relative;">
                                 <img src="/Uploads/room_cover_images/{{ $room->cover_image }}" alt="{{ $room->title }}">
                                 <span class="room-badge">Available</span>
@@ -288,7 +290,7 @@
                             <div class="room-card-content">
                                 <h4>{{ $room->title }}</h4>
                                 <p>{{ $room->excerpt }}</p>
-                                <a href="{{ route('contact') }}" class="enquire-btn">
+                                <a href="{{ route('contact') }}" class="enquire-btn ripple">
                                     <i class="fa fa-envelope" style="margin-right: 8px;"></i>Enquire Now
                                 </a>
                             </div>
@@ -297,8 +299,8 @@
                 @endforeach
             </div>
 
-            <div class="text-center" style="margin-top: 40px;" data-aos="fade-up">
-                <a href="{{ route('vacancies') }}" class="enquire-btn" style="padding: 15px 50px; font-size: 16px;">
+            <div class="text-center scroll-animate" style="margin-top: 40px;">
+                <a href="{{ route('vacancies') }}" class="enquire-btn ripple" style="padding: 15px 50px; font-size: 16px;">
                     See More Rooms <i class="fa fa-arrow-right" style="margin-left: 10px;"></i>
                 </a>
             </div>
