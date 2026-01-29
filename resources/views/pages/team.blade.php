@@ -124,6 +124,28 @@
         .modal-header {
             border-bottom: none !important;
             padding: 20px;
+            position: relative;
+        }
+        
+        .modal-header .close {
+            font-size: 24px;
+            opacity: 1;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+            color: #333;
+            background: #f0f0f0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-header .close span {
+            line-height: 0;
         }
         
         .modal-body {
@@ -251,6 +273,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
+                                            <h5 class="modal-title">Staff Profile</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -301,6 +324,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
+                                            <h5 class="modal-title">Staff Profile</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -351,6 +375,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
+                                            <h5 class="modal-title">Staff Profile</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -422,6 +447,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
+                                            <h5 class="modal-title">Staff Profile</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -473,6 +499,7 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
+                                            <h5 class="modal-title">Staff Profile</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -524,6 +551,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-zoom');
     animateElements.forEach(element => {
         observer.observe(element);
+    });
+
+    // Ensure modal functionality works properly
+    $('.modal').on('click', '.close, .modal-close-btn', function() {
+        $(this).closest('.modal').modal('hide');
+    });
+    
+    // Add backdrop click to close
+    $('.modal').on('click', function(e) {
+        if ($(e.target).hasClass('modal')) {
+            $(this).modal('hide');
+        }
+    });
+    
+    // Add keyboard escape to close
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape') {
+            $('.modal').modal('hide');
+        }
     });
 });
 
