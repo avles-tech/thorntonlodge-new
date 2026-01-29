@@ -6,146 +6,284 @@
     <meta name="Abstract" content="{{$Abstract}}" />
 @endsection
 @section('extra_css')
-    <!-- Additional Css -->
+<style>
+.modern-section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.modern-section-title .title-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #7BA5C7 0%, #6B94B5 100%);
+    color: white;
+    padding: 10px 32px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(123, 165, 199, 0.35);
+}
+
+.modern-section-title h3 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2C3E50;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.about-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(123, 165, 199, 0.15);
+}
+
+.about-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-card ul li {
+    padding: 15px 0 15px 35px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-card ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    color: #7BA5C7;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hero-about {
+    background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.7)), url(/images/slider/whoweare.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: center bottom;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.hero-about h1 {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-about p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.philosophy-box {
+    background: linear-gradient(135deg, #7BA5C7 0%, #6B94B5 100%);
+    border-radius: 20px;
+    padding: 50px;
+    color: white;
+    box-shadow: 0 15px 50px rgba(123, 165, 199, 0.3);
+}
+
+.philosophy-box h4 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.philosophy-box p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.image-circle {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
 @endsection
 @section('content')
-    <section class="about" style="margin-top: -380px;">
-        <div class="container-2">
-            <img src="/images/slider/whoweare.jpg" style="width: 100%; "/>
-            <h3 class="bottom-left">Who We Are</h3>
-        </div>
-    </section>
-
-    <section class="about py-lg-5 py-md-5 py-5" style="position: static;">
-        <div class="container">
-            <div class="inner-sec-w3pvt py-lg-1 py-3">
-                <div class="text-center">
-                    <p style="font-size:19px; font-weight: 500;">Calm, cheerful and relaxed family-like environment pervades throughout the Home.This is very much influenced by the staff who have been embraced by the philosophy of the home's care by
-                        virtue of the time they have served, the training they have acquired and skills and knowledge gained. The Home promotes ongoing and statutory training required by the National Care Standards.</p>
-                </div>
-                <!-- services -->
-                <div class="fetured-info pt-lg-1">
-                    <div class="row fetured-sec mt-lg-5 mt-3">
-                        <div class="col-lg-12 p-4">
-                            <h5 style="font-weight:600; color:#3377ae; text-transform: uppercase">General Aims and Objectives of our Home</h5>
-                        </div>
-                        <div class="col-lg-12 serv_bottom feature-grids p-0">
-                            <div class="featured-left text-left">
-                                <div class="bottom-gd px-3 about-border">
-                                    <ul>
-                                        <li>Provide long term psychiatric care for adults and older people suffering from past and present mental illness.</li>
-                                        <li> Help in the preservation of dignity and independence by progressively restoring Confidence either on a one to one basis or in-group related personal process.</li>
-                                        <li>Maintain a key worker system to enable staff to be responsible and accountable to a negotiated group of Service users in monitoring comprehensive individualised care. Such a system is operational in assessing, planning and reviewing of care plans.</li>
-                                        <li>Assist those Service users who require help on maintaining personal hygiene and appearance and similarly encourage self-care to enhance rehabilitation, achievable through prompting and persuasion.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 serv_bottom feature-grids p-0">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="featured-left text-left">
-                                        <div class="bottom-gd px-3 about-border">
-                                            <ul>
-                                                <li>Offer help and assistance as may be required to individual Service users to enable them to lead as normal a life as possible within their mental and physical ability.</li>
-                                                <li>Uphold the principle that each individual Service User has his/her own personality and social identity and therefore provide good understanbing to maintain their sense of personal worth and self-esteem.</li>
-                                                <li>Hold regular meetings to promote community bonding and facilitate them to develop social relationships of sufficient strength which could provide mutual support and assist in resolving each other’s problems.</li>
-                                                <li>Create a homely and caring environment where individual needs are continuously assessed and personal choices promoted so that Service users can determine their own purchases or leisure activities. Where this is not attainable the key worker will arrange to provide suitable help.</li>
-                                                <li>Organise planned activities, which would promote assertiveness and social skills training. All enterprises will be facilitated and participation based on a voluntary basis.</li>
-                                                <li>Offer help and supervision to those Service users who are physically and mentally less able to dress and carry out mental tasks. At a point of achievement to progressively withdraw such supervision in order to promote rehabilitation.</li>
-                                                <li>Offer advice on welfare benefits and liase with the voluntary and statutory services to provide all help and resources to meet Service users physical, psychological, social and spiritual needs.</li>
-                                                <li>Monitor the administration of drugs, observe their side effects and encourage the more able to self medicate.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="featured-left text-left">
-                                        <div class="bottom-gd px-3 about-border">
-                                            <ul>
-                                            <li>Provide a comprehensive range of facilities, which help to offer care to Service users with mild dependency and incontinent problems.</li>
-                                            <li>Offer those Service users facilities to make and have a quiet cup of tea on their own or with their relatives.</li>
-                                            <li>Facilities have been provided, follow up and maintain a continuing of care for those existing service users who have accessed a sense of security and homeliness in the home and help to overcome confusional state through ageing process and prevent changes to avoid disruption.</li>
-                                            <li>Promote and encourage by virtue of rehabilitative approach a sense of self and supportive care. However, if physical and mental condition exacerbate to the extent that confusion is set in to the point that it deters the well being of other Service users, such service users will be advised to seek specialised care.</li>
-                                            <li>Uphold the views that Service users exercise the same rights similarly to when he/she was living in his/her own home. To achieve so, the Service User is encouraged to take within limitations some elements of risks.</li>
-                                            <li>Consult Service users in the preparation of menus and provide choice of meals to individual likes and dislikes to meet dietary needs.</li>
-                                            <li>Hold a three monthly family meeting to facilitate and promote objective discussion on the activities of the Home and help to create a partnership in care.</li>
-                                            <li>Provide daily planned activities to stimulate occupation and confidence and organise special functions and visits to places of interest.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonials py-md-0 py-0">
-                        <h3 class="tittle"><span class="sub-tittle">Home Philosophy</span></h3>
-                    </div>
-                    <div class="row fetured-sec mt-lg-0 mt-0">
-                        <div class="col-lg-8 serv_bottom feature-grids p-5">
-                            <div class="featured-left text-left">
-                                <div class="bottom-gd px-9 py-lg-5">
-                                    <h5 style="font-weight:600; color:#3377ae; text-transform: uppercase"></h5><br/>
-                                    <p style="font-size:16px;">Thornton Lodge has a friendly, family-like environment where care is delivered on an individual or group basis at regular meetings. This improves interaction and fosters understanding of one another's needs to help residents to express their feelings, identify their rights, independence, fulfilment and self esteem.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 p-4">
-                            <div class="custom-circle">
-                                <img src="/images/buddha-giant.jpg" alt="philosopher" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonials py-md-0 py-0">
-                        <h3 class="tittle"><span class="sub-tittle">Equal Opportunity</span></h3>
-                    </div>
-                    <div class="row fetured-sec mt-lg-0 mt-0">
-                        <div class="col-lg-12 p-4">
-                        </div>
-                        <div class="col-lg-4 p-4">
-                            <div class="custom-circle">
-                                <img src="/images/justitia-2638651_1920.jpg" alt="Equal" class="img-fluid image1">
-                            </div>
-                        </div>
-                        <div class="col-lg-8 serv_bottom feature-grids p-0">
-                            <div class="featured-left text-left">
-                                <div class="bottom-gd px-3 about-border">
-                                    <ul>
-                                    <li>The Home does ensure that each service user is treated with dignity and given the opportunity to act and think without hindrance by anyone. Every service user is treated with equal regard irrespective of his or her religion, race, cultural origin, gender, sexual orientation or disability.</li>
-                                    <li>The Home is committed to equal opportunity in every facet of its recruitment and employment, which means that staff are employed irrespective of their religion, race, cultural origin, gender, sexual orientation or disability.</li>
-                                    <li>The home endeavours, at all times, to maintain a happy and healthy environment, free of petty conflicts based on racial or sexual remarks. Service users are encouraged to maintain their religious or political beliefs and choice. Staff are forbidden to either influence or coerce their fellow colleagues or residents of their chosen belief.</li>
-                                    <li>THORNTON LODGE is a Home where quality goes with care, where reputation is built with experience and where the resident always comes first</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonials py-md-0 py-0">
-                        <h3 class="tittle"><span class="sub-tittle">Meals</span></h3>
-                    </div>
-                    <div class="row fetured-sec mt-lg-0 mt-0">
-                        <div class="col-lg-8 serv_bottom feature-grids p-5">
-                            <div class="featured-left text-left">
-                                <div class="bottom-gd px-9 py-lg-5">
-                                    <p style="font-size:16px;">Breakfast is between 8am to 9am. Dinner between 12.30pm to 1.30pm, high tea between 5.30pm and 6.30pm, whilst a light supper is served at 8pm. Menus are prepared in consultation with service users wishes and a weekly menu is displayed in the Dining room with alternative choices. Every effort is made to meet the service users request and choice. The Home also provides special dietary needs for vegetarians and to those of different ethnic origin. The home also provides kitchenette and laundry facilities for residents who are able to do their own laundry or make their own tea and coffee.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 p-4">
-                            <div class="custom-circle">
-                                <img src="/images/icon-meals.jpg" alt="philosopher" class="img-fluid image1">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container" style="max-width: 1600px; padding: 0 40px;">
+            <div data-aos="fade-up">
+                <h1>Who We Are</h1>
+                <p>A calm, cheerful and relaxed family-like environment pervades throughout our home. This is influenced by our dedicated staff who embrace the philosophy of care through ongoing training, skills and knowledge.</p>
             </div>
         </div>
-        <!-- //services -->
     </section>
-    <!-- //ab -->
+
+    <!-- General Aims Section - White Background -->
+    <section style="background: #ffffff; padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <div class="modern-section-title" data-aos="fade-up">
+                <div class="title-tag">OUR MISSION</div>
+                <h3>General Aims and Objectives</h3>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-12">
+                    <div class="about-card">
+                        <ul>
+                            <li>Provide long term psychiatric care for adults and older people suffering from past and present mental illness.</li>
+                            <li>Help in the preservation of dignity and independence by progressively restoring confidence either on a one to one basis or in-group related personal process.</li>
+                            <li>Maintain a key worker system to enable staff to be responsible and accountable to a negotiated group of Service users in monitoring comprehensive individualised care.</li>
+                            <li>Assist those Service users who require help on maintaining personal hygiene and appearance and similarly encourage self-care to enhance rehabilitation.</li>
+                            <li>Offer help and assistance as may be required to individual Service users to enable them to lead as normal a life as possible within their mental and physical ability.</li>
+                            <li>Uphold the principle that each individual Service User has his/her own personality and social identity and therefore provide good understanding to maintain their sense of personal worth and self-esteem.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-6 mb-4">
+                    <div class="about-card">
+                        <ul>
+                            <li>Hold regular meetings to promote community bonding and facilitate them to develop social relationships of sufficient strength.</li>
+                            <li>Create a homely and caring environment where individual needs are continuously assessed and personal choices promoted.</li>
+                            <li>Organise planned activities, which would promote assertiveness and social skills training on a voluntary basis.</li>
+                            <li>Offer help and supervision to those Service users who are physically and mentally less able to dress and carry out mental tasks.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="about-card">
+                        <ul>
+                            <li>Offer advice on welfare benefits and liaise with the voluntary and statutory services to provide all help and resources.</li>
+                            <li>Monitor the administration of drugs, observe their side effects and encourage the more able to self medicate.</li>
+                            <li>Provide a comprehensive range of facilities, which help to offer care to Service users with mild dependency and incontinence problems.</li>
+                            <li>Uphold the views that Service users exercise the same rights similarly to when living in their own home.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-12">
+                    <div class="about-card">
+                        <ul>
+                            <li>Consult Service users in the preparation of menus and provide choice of meals to individual likes and dislikes to meet dietary needs.</li>
+                            <li>Hold a three monthly family meeting to facilitate and promote objective discussion on the activities of the Home and help to create a partnership in care.</li>
+                            <li>Provide daily planned activities to stimulate occupation and confidence and organise special functions and visits to places of interest.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section - Light Blue Background -->
+    <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4" data-aos="fade-right">
+                    <div class="philosophy-box">
+                        <div class="title-tag" style="background: rgba(255,255,255,0.2); margin-bottom: 30px;">PHILOSOPHY</div>
+                        <h4>Our Home Philosophy</h4>
+                        <p>Thornton Lodge has a friendly, family-like environment where care is delivered on an individual or group basis at regular meetings. This improves interaction and fosters understanding of one another's needs to help residents express their feelings, identify their rights, independence, fulfilment and self esteem.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-left">
+                    <div class="image-circle">
+                        <img src="/images/buddha-giant.jpg" alt="Philosophy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equal Opportunity Section - White Background -->
+    <section style="background: #ffffff; padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <div class="modern-section-title" data-aos="fade-up">
+                <div class="title-tag">OUR VALUES</div>
+                <h3>Equal Opportunity</h3>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4" data-aos="fade-right">
+                    <div class="image-circle">
+                        <img src="/images/justitia-2638651_1920.jpg" alt="Equal Opportunity">
+                    </div>
+                </div>
+                <div class="col-lg-8 mb-4" data-aos="fade-left">
+                    <div class="about-card">
+                        <ul>
+                            <li>The Home does ensure that each service user is treated with dignity and given the opportunity to act and think without hindrance by anyone. Every service user is treated with equal regard irrespective of his or her religion, race, cultural origin, gender, sexual orientation or disability.</li>
+                            <li>The Home is committed to equal opportunity in every facet of its recruitment and employment, which means that staff are employed irrespective of their religion, race, cultural origin, gender, sexual orientation or disability.</li>
+                            <li>The home endeavours, at all times, to maintain a happy and healthy environment, free of petty conflicts based on racial or sexual remarks.</li>
+                            <li>Thornton Lodge is a Home where quality goes with care, where reputation is built with experience and where the resident always comes first.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meals Section - Light Blue Background -->
+    <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
+        <div class="container-fluid" style="max-width: 1600px; padding: 0 20px;">
+            <div class="modern-section-title" data-aos="fade-up">
+                <div class="title-tag">DINING</div>
+                <h3>Meals & Dining Experience</h3>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4" data-aos="fade-right">
+                    <div class="about-card">
+                        <h4 style="color: #7BA5C7; font-weight: 700; margin-bottom: 25px;">Meal Times</h4>
+                        <p style="font-size: 17px; line-height: 1.9; color: #555; margin-bottom: 25px;">
+                            <strong>Breakfast:</strong> 8:00am - 9:00am<br>
+                            <strong>Dinner:</strong> 12:30pm - 1:30pm<br>
+                            <strong>High Tea:</strong> 5:30pm - 6:30pm<br>
+                            <strong>Light Supper:</strong> 8:00pm
+                        </p>
+                        <p style="font-size: 17px; line-height: 1.9; color: #555;">
+                            Menus are prepared in consultation with service users wishes and a weekly menu is displayed in the Dining room with alternative choices. Every effort is made to meet the service users request and choice. The Home also provides special dietary needs for vegetarians and to those of different ethnic origin. The home also provides kitchenette and laundry facilities for residents who are able to do their own laundry or make their own tea and coffee.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-left">
+                    <div class="image-circle">
+                        <img src="/images/icon-meals.jpg" alt="Meals">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 @section('extra_script')
 @endsection
