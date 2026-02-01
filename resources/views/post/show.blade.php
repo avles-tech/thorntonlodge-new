@@ -6,7 +6,17 @@
     <meta name="Abstract" content="{{$Abstract}}" />
 @endsection
 @section('extra_css')
-    <!-- Additional Css -->
+    <style>
+        .card {
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 422px;
+            object-fit: cover;
+        }
+    </style>
 @endsection
 @section('content')
     <section class="about">

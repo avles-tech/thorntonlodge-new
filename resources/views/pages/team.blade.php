@@ -56,7 +56,7 @@
         .team-image-container {
             position: relative;
             overflow: hidden;
-            height: 220px;
+            height: 300px;
         }
         
         .team-image {

@@ -6,7 +6,17 @@
     <meta name="Abstract" content="{{$Abstract}}" />
 @endsection
 @section('extra_css')
-    <!-- Additional Css -->
+    <style>
+        .card {
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 422px;
+            object-fit: cover;
+        }
+    </style>
 @endsection
 @section('content')
     <section class="about">
@@ -25,7 +35,7 @@
                                 @foreach($posts as $post)
                                     <?php $getcategory=App\category::where('id',$post->category_id)->first(); ?>
                                     <div class="card my-lg-5" data-aos="fade-up">
-                                        <a href="/tag-{{ strtolower($getcategory->slug) }}/{{$post->slug}}">  <img height="422px;" class="card-img-top" src="/Uploads/post_cover_images/{{ $post->image }}" alt="{{ $post->title }}"></a>
+                                        <a href="/tag-{{ strtolower($getcategory->slug) }}/{{$post->slug}}">  <img class="card-img-top" src="/Uploads/post_cover_images/{{ $post->image }}" alt="{{ $post->title }}"></a>
                                         <div class="card-body">
                                             <h6 class="date"><span>By: {{ $post->author }}</span> <?php
                                                 $updateDate=$post->created_at;
