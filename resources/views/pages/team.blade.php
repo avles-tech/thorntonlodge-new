@@ -50,6 +50,7 @@
         .team-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            border: 2px solid #7BA5C7;
         }
         
         .team-image-container {
@@ -272,7 +273,7 @@
                     foreach($staffs as $k => $staff) {
                         if($staff->category == 'Managing Director') {
                     ?>
-                            <div class="team-card">
+                            <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
                                 <div class="team-image-container">
                                     <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
@@ -280,9 +281,6 @@
                                     <div class="team-title">{{ $staff->category }}</div>
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
-                                        <i class="fa fa-info"></i>
-                                    </button>
                                 </div>
                             </div>
                             
@@ -321,7 +319,7 @@
                     foreach($staffs as $k => $staff) {
                         if($staff->category == 'Deputy Managing Director') {
                     ?>
-                            <div class="team-card">
+                            <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
                                 <div class="team-image-container">
                                     <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
@@ -329,9 +327,6 @@
                                     <div class="team-title">{{ $staff->category }}</div>
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
-                                        <i class="fa fa-info"></i>
-                                    </button>
                                 </div>
                             </div>
                             
@@ -370,7 +365,7 @@
                     foreach($staffs as $k => $staff) {
                         if($staff->category == 'Home Manager') {
                     ?>
-                            <div class="team-card">
+                            <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
                                 <div class="team-image-container">
                                     <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
@@ -378,9 +373,6 @@
                                     <div class="team-title">{{ $staff->category }}</div>
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
-                                        <i class="fa fa-info"></i>
-                                    </button>
                                 </div>
                             </div>
                             
@@ -424,16 +416,13 @@
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
                         @if($staff->category == 'Administrative Team')
-                            <div class="team-card">
+                            <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
                                 <div class="team-image-container">
                                     <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
                                 <div class="team-content">
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
-                                        <i class="fa fa-info"></i>
-                                    </button>
                                 </div>
                             </div>
                             
@@ -475,16 +464,13 @@
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
                         @if($staff->category == 'Maintenance Team')
-                            <div class="team-card">
+                            <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
                                 <div class="team-image-container">
                                     <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
                                 <div class="team-content">
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
-                                        <i class="fa fa-info"></i>
-                                    </button>
                                 </div>
                             </div>
                             
@@ -526,7 +512,7 @@
                 <div class="staff-grid">
                     @foreach($staffs as $k => $staff)
                         @if($staff->category == 'Primary Senior Care')
-                            <div class="team-card">
+                            <div class="team-card" style="cursor: pointer;">
                                 <div class="team-image-container">
                                     <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
@@ -552,11 +538,8 @@
                     @foreach($staffs as $k => $staff)
                         @if($staff->category == 'Senior Care Assistants')
                             <div class="col-md-3 col-sm-6 text-center mb-3">
-                                <h5 style="font-weight: 600; color: #2C3E50;">
+                                <h5 style="font-weight: 600; color: #2C3E50; cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
                                     {{ $staff->name }}
-                                    <button class="team-info-btn" style="width: 28px; height: 28px; font-size: 12px; vertical-align: middle;" data-toggle="modal" data-target="#staffModal{{ $k }}">
-                                        <i class="fa fa-info"></i>
-                                    </button>
                                 </h5>
                             </div>
                             
