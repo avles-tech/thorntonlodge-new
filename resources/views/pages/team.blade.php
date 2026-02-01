@@ -7,6 +7,34 @@
 @endsection
 @section('extra_css')
     <style>
+        /* Banner styles */
+        .hero-team {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url(/images/slider/our_team.jpg) no-repeat center center;
+            background-size: cover;
+            background-position: center bottom;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .hero-team h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-team p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
         /* Team Page Styles */
         .team-card {
             background: white;
@@ -198,25 +226,12 @@
     </style>
 @endsection
 @section('content')
-    <!-- Modern Hero Banner with Parallax -->
-    <section class="banner scroll-animate parallax-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url(/images/slider/our_team.jpg) no-repeat center; background-size: cover; padding: 160px 0 120px 0; position: relative; overflow: hidden; background-attachment: fixed;">
-        <!-- Decorative Elements -->
-        <div class="float-animation" style="position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(80px);"></div>
-        <div class="float-animation" style="position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: rgba(80, 149, 205, 0.1); border-radius: 50%; filter: blur(100px); animation-delay: 1s;"></div>
-
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-10 text-center hero-content">
-                    <!-- Main Heading -->
-                    <h1 style="font-size: 52px; font-weight: 700; color: white; margin-bottom: 30px; line-height: 1.2; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">
-                        Our Team
-                    </h1>
-
-                    <!-- Subheading -->
-                    <p style="font-size: 24px; color: white; font-weight: 400; margin-bottom: 20px; text-shadow: 1px 1px 8px rgba(0,0,0,0.4); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                        Meet the Professionals Behind Our Quality Care
-                    </p>
-                </div>
+    <!-- Hero Banner Section -->
+    <section class="hero-team banner scroll-animate parallax-hero">
+        <div class="container" style="max-width: 1600px; padding: 0 40px;">
+            <div class="hero-content">
+                <h1>Our Team</h1>
+                <p>Meet the Professionals Behind Our Quality Care</p>
             </div>
         </div>
     </section>
@@ -252,8 +267,11 @@
             <div class="team-section scroll-animate-zoom" style="margin-bottom: 80px;">
                 <h3 class="team-category-title">Management Team</h3>
                 <div class="staff-grid">
-                    @foreach($orderedStaffs as $k => $staff)
-                        @if(in_array($staff->category, ['Managing Director', 'Deputy Managing Director', 'Home Manager']))
+                    <?php
+                    // Display Managing Director first
+                    foreach($staffs as $k => $staff) {
+                        if($staff->category == 'Managing Director') {
+                    ?>
                             <div class="team-card">
                                 <div class="team-image-container">
                                     <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
@@ -295,8 +313,108 @@
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                    @endforeach
+                    <?php
+                        }
+                    }
+                    
+                    // Display Deputy Managing Director second
+                    foreach($staffs as $k => $staff) {
+                        if($staff->category == 'Deputy Managing Director') {
+                    ?>
+                            <div class="team-card">
+                                <div class="team-image-container">
+                                    <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
+                                </div>
+                                <div class="team-content">
+                                    <div class="team-title">{{ $staff->category }}</div>
+                                    <h4 class="team-name">{{ $staff->name }}</h4>
+                                    <div class="team-qualification">{{ $staff->qualification }}</div>
+                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                                        <i class="fa fa-info"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Staff Modal -->
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Staff Profile</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}">
+                                            <div class="team-title">{{ $staff->category }}</div>
+                                            <h4 class="team-name">{{ $staff->name }}</h4>
+                                            <div class="team-qualification">{{ $staff->qualification }}</div>
+                                            @if($staff->bio)
+                                                <blockquote>
+                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
+                                                </blockquote>
+                                            @endif
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
+                    
+                    // Display Home Manager third
+                    foreach($staffs as $k => $staff) {
+                        if($staff->category == 'Home Manager') {
+                    ?>
+                            <div class="team-card">
+                                <div class="team-image-container">
+                                    <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
+                                </div>
+                                <div class="team-content">
+                                    <div class="team-title">{{ $staff->category }}</div>
+                                    <h4 class="team-name">{{ $staff->name }}</h4>
+                                    <div class="team-qualification">{{ $staff->qualification }}</div>
+                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                                        <i class="fa fa-info"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Staff Modal -->
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Staff Profile</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}">
+                                            <div class="team-title">{{ $staff->category }}</div>
+                                            <h4 class="team-name">{{ $staff->name }}</h4>
+                                            <div class="team-qualification">{{ $staff->qualification }}</div>
+                                            @if($staff->bio)
+                                                <blockquote>
+                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
+                                                </blockquote>
+                                            @endif
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             

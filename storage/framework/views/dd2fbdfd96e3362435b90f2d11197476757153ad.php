@@ -315,6 +315,6 @@ div[data-aos="fade-left"] h3 {
             <span class="fa fa-angle-up" aria-hidden="true"></span>
         </a>
     </div>
-    <p class="copy-w3layouts">Thornton Lodge © <?php echo e(date('Y')); ?>. All Rights Reserved. | Website developed by <a href="http://adameveandapple.co.uk/">AdamEve&Apple</a></p>
+    <p class="copy-w3layouts">Thornton Lodge © <?php echo e(date('Y')); ?>. All Rights Reserved. | Website developed by <a href="https://slyfoxdigital.uk/">Slyfox Digital</a></p>
 </div>
 <!-- //copyright --><?php /**PATH /var/www/resources/views/inc/footer.blade.php ENDPATH**/ ?>

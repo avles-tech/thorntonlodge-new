@@ -161,22 +161,24 @@
 
 .enquire-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #7BA5C7 0%, #6B94B5 100%);
-    color: white;
+    background-image: linear-gradient(135deg, #7BA5C7 0%, #6B94B5 100%);
+    background-color: #7BA5C7;
+    color: white !important;
     padding: 12px 30px;
     border-radius: 50px;
     font-weight: 700;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(123, 165, 199, 0.3);
 }
 
 .enquire-btn:hover {
-    background: linear-gradient(135deg, #6B94B5 0%, #5A8A9A 100%);
+    background-image: linear-gradient(135deg, #6B94B5 0%, #5A8A9A 100%);
+    background-color: #6B94B5;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(123, 165, 199, 0.4);
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
 }
 
 .image-circle {
