@@ -143,6 +143,7 @@
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
+            justify-content: center;
         }
         
         @media (max-width: 768px) {
