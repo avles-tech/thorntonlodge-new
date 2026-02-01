@@ -139,11 +139,16 @@
         }
         
         .staff-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
             margin-bottom: 40px;
-            justify-content: center;
+        }
+
+        .staff-grid .team-card {
+            width: 250px;
+            flex-shrink: 0;
         }
         
         @media (max-width: 768px) {
