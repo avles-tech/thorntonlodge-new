@@ -38,11 +38,11 @@
         /* Team Page Styles */
         .team-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
             transition: all 0.3s ease;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             height: 100%;
             text-align: center;
         }
@@ -56,7 +56,7 @@
         .team-image-container {
             position: relative;
             overflow: hidden;
-            height: 250px;
+            height: 220px;
         }
         
         .team-image {
@@ -71,7 +71,7 @@
         }
         
         .team-content {
-            padding: 25px;
+            padding: 15px 15px 20px;
         }
         
         .team-title {
@@ -79,21 +79,21 @@
             text-transform: uppercase;
             font-weight: 700;
             color: #7BA5C7;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             letter-spacing: 1px;
         }
         
         .team-name {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: #2C3E50;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         
         .team-qualification {
             font-size: 14px;
             color: #777;
-            margin-bottom: 15px;
+            margin-bottom: 0;
         }
         
         .team-info-btn {
@@ -118,10 +118,10 @@
         
         .team-category-title {
             position: relative;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             color: #2C3E50;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-align: center;
         }
         
@@ -139,9 +139,9 @@
         
         .staff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
         
         @media (max-width: 768px) {
@@ -238,7 +238,7 @@
     </section>
 
     <!-- Team Section -->
-    <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 100px 0;">
+    <section style="background: linear-gradient(135deg, #F0F7FA 0%, #E8F4F8 100%); padding: 80px 0;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -265,7 +265,7 @@
             ?>
             
             <!-- Management Team Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 80px;">
+            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
                 <h3 class="team-category-title">Management Team</h3>
                 <div class="staff-grid">
                     <?php
@@ -411,7 +411,7 @@
             </div>
             
             <!-- Administrative Team Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 80px;">
+            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
                 <h3 class="team-category-title">Administrative Team</h3>
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
@@ -459,7 +459,7 @@
             </div>
             
             <!-- Maintenance Team Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 80px;">
+            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
                 <h3 class="team-category-title">Maintenance Team</h3>
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
@@ -507,7 +507,7 @@
             </div>
             
             <!-- Primary Senior Care Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 80px;">
+            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
                 <h3 class="team-category-title">Primary Senior Care</h3>
                 <div class="staff-grid">
                     @foreach($staffs as $k => $staff)
@@ -527,9 +527,9 @@
             </div>
             
             <!-- Senior Care Assistants Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 80px;">
+            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
                 <h3 class="team-category-title">Senior Care Assistants</h3>
-                <div class="text-center" style="margin-bottom: 30px;">
+                <div class="text-center" style="margin-bottom: 20px;">
                     <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
                         <img src="{{ asset('Uploads/staff_images/staff1.jpg') }}" alt="Senior Care Assistants Team" style="width: 100%; max-width: 800px; display: inline-block;">
                     </div>
