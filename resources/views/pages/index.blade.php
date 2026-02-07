@@ -342,7 +342,8 @@
             font-size: 35px;
             color: white;
             transition: all 0.4s ease;
-            pointer-events: none;
+            cursor: pointer;
+            z-index: 10;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             border: 4px solid rgba(255, 255, 255, 0.9);
         }
@@ -352,13 +353,13 @@
             background: rgba(244, 196, 160, 1);
             box-shadow: 0 15px 50px rgba(244, 196, 160, 0.5);
         }
-        
-        .video-wrapper video:not([controls]) + .video-play-button {
-            display: flex;
+
+        .video-play-button.hidden {
+            display: none !important;
         }
-        
-        .video-wrapper video[controls] + .video-play-button {
-            display: none;
+
+        .video-wrapper video {
+            cursor: pointer;
         }
         
         /* Floating Animation */
@@ -620,11 +621,11 @@
                 </div>
 
                 <div class="video-wrapper" style="position: relative; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 60px rgba(0,0,0,0.15); max-width: 100%;">
-                    <video width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_THUMBNAIL.png') }}" onclick="this.controls=true; this.play();" style="display: block;">
+                    <video id="promoVideo" width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_THUMBNAIL.png') }}" style="display: block;">
                         <source src="{{ asset('videos/THORNTON_LODGE_PROMO_VIDEO_4K.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="video-play-button">
+                    <div class="video-play-button" onclick="playVideo('promoVideo')">
                         <i class="fa fa-play"></i>
                     </div>
                 </div>
@@ -644,11 +645,11 @@
                 </div>
 
                 <div class="video-wrapper" style="position: relative; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 60px rgba(0,0,0,0.15); max-width: 100%;">
-                    <video width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_JOE.png') }}" onclick="this.controls=true; this.play();" style="display: block;">
+                    <video id="joeVideo" width="100%" loop muted poster="{{ asset('images/THORNTON_LODGE_JOE.png') }}" style="display: block;">
                         <source src="{{ asset('videos/THORNTON_LODGE_JOE.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="video-play-button">
+                    <div class="video-play-button" onclick="playVideo('joeVideo')">
                         <i class="fa fa-play"></i>
                     </div>
                 </div>
@@ -1209,5 +1210,40 @@ window.addEventListener('scroll', function() {
         parallax.style.backgroundPositionY = scrolled * 0.5 + 'px';
     }
 });
+
+// Play video function
+function playVideo(videoId) {
+    const video = document.getElementById(videoId);
+    const playButton = video.nextElementSibling;
+
+    if (video) {
+        video.controls = true;
+        video.muted = false;
+        video.play();
+
+        // Hide play button
+        if (playButton && playButton.classList.contains('video-play-button')) {
+            playButton.classList.add('hidden');
+        }
+
+        // Show play button again when video ends
+        video.addEventListener('ended', function() {
+            video.controls = false;
+            if (playButton && playButton.classList.contains('video-play-button')) {
+                playButton.classList.remove('hidden');
+            }
+        });
+
+        // Show play button if video is paused
+        video.addEventListener('pause', function() {
+            if (video.currentTime === video.duration || video.currentTime === 0) {
+                video.controls = false;
+                if (playButton && playButton.classList.contains('video-play-button')) {
+                    playButton.classList.remove('hidden');
+                }
+            }
+        });
+    }
+}
 </script>
 @endsection

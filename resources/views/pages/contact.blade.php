@@ -194,9 +194,9 @@
                         <h4 style="font-size: 22px; font-weight: 600; margin-bottom: 15px; color: #333;">Our Location</h4>
                         <p style="font-size: 15px; line-height: 1.8; color: #555; margin-bottom: 5px;">
                             Thornton Lodge<br>
-                            47 Thornton Road<br>
-                            Thornton Heath<br>
-                            Surrey CR7 6BA
+                            105, Brigstock Road,<br>
+                            Thornton Heath, <br>
+                            CR7 7JL
                         </p>
                     </div>
                 </div>
