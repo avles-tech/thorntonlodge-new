@@ -157,70 +157,118 @@
             }
         }
         
+        .modal-dialog {
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
         .modal-header {
             border-bottom: none !important;
-            padding: 20px;
+            padding: 15px 20px 10px;
             position: relative;
         }
-        
+
         .modal-header .close {
-            font-size: 24px;
+            font-size: 20px;
             opacity: 1;
             position: absolute;
-            top: 15px;
-            right: 15px;
-            z-index: 10;
+            top: 10px;
+            right: 10px;
+            z-index: 1060;
             color: #333;
             background: #f0f0f0;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            border: none;
+            cursor: pointer;
         }
-        
+
+        .modal-header .close:hover {
+            background: #7BA5C7;
+            color: white;
+        }
+
         .modal-header .close span {
             line-height: 0;
         }
-        
-        .modal-body {
-            padding: 0 30px 30px;
-            text-align: center;
+
+        .modal-header .modal-title {
+            font-size: 16px;
+            font-weight: 600;
         }
-        
+
+        .modal-body {
+            padding: 10px 25px 20px;
+            text-align: center;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
         .modal-body img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-        
+
         .modal-content {
             border-radius: 20px;
             border: none;
+        }
+
+        .modal {
+            z-index: 1050;
+        }
+
+        .modal-backdrop {
+            z-index: 1040;
         }
         
         .modal-footer {
             border-top: none;
             justify-content: center;
-            padding-bottom: 30px;
+            padding: 10px 20px 20px;
         }
-        
+
         .modal-close-btn {
             background: #7BA5C7;
             color: white;
             border: none;
-            padding: 10px 25px;
+            padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 14px;
             transition: all 0.3s ease;
         }
-        
+
         .modal-close-btn:hover {
             background: #5A8A9A;
             transform: translateY(-2px);
+        }
+
+        .modal-body .team-title {
+            font-size: 12px;
+        }
+
+        .modal-body .team-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body .team-qualification {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body blockquote {
+            margin: 15px 0;
+            padding-left: 15px;
+            font-size: 14px;
         }
         
         blockquote {
@@ -298,7 +346,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -358,7 +406,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -418,7 +466,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -473,7 +521,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -521,7 +569,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -590,7 +638,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -642,7 +690,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -700,22 +748,24 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
+    // Initialize modals with backdrop option
+    $('.modal').modal({
+        backdrop: true,
+        keyboard: true,
+        show: false
+    });
+
     // Ensure modal functionality works properly
-    $('.modal').on('click', '.close, .modal-close-btn', function() {
+    $('.modal').on('click', '.close, .modal-close-btn', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         $(this).closest('.modal').modal('hide');
     });
 
-    // Add backdrop click to close - click outside modal content
+    // Handle backdrop clicks
     $('.modal').on('click', function(e) {
-        if (e.target === this) {
+        if ($(e.target).hasClass('modal')) {
             $(this).modal('hide');
-        }
-    });
-
-    // Add keyboard escape to close
-    $(document).on('keydown', function(e) {
-        if (e.key === 'Escape') {
-            $('.modal').modal('hide');
         }
     });
 });
