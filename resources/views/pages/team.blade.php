@@ -286,6 +286,59 @@
             color: #555;
             text-align: left;
         }
+
+        /* Expandable card details */
+        .team-details {
+            display: none;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 2px solid #7BA5C7;
+            animation: slideDown 0.3s ease;
+        }
+
+        .team-details.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
+
+        .team-details p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+            text-align: left;
+            margin: 0;
+        }
+
+        .expand-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: #7BA5C7;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .expand-icon {
+            background: #5A8A9A;
+            transform: scale(1.1);
+        }
     </style>
 @endsection
 @section('content')
@@ -341,7 +394,7 @@
                                 $count++;
                         ?>
                             <div class="col-md-4">
-                                <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                                <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
                                     <div class="team-image-container">
                                         <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
                                     </div>
@@ -349,34 +402,17 @@
                                         <h4 class="team-name">{{ $staff->name }}</h4>
                                         <div class="team-qualification">{{ $staff->qualification }}</div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Staff Profile</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                    @if($staff->bio)
+                                        <div class="expand-icon">
+                                            <i class="fa fa-plus"></i>
                                         </div>
-                                        <div class="modal-body">
-                                            <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}">
-                                            <div class="team-title">{{ $staff->category }}</div>
-                                            <h4 class="team-name">{{ $staff->name }}</h4>
-                                            <div class="team-qualification">{{ $staff->qualification }}</div>
-                                            @if($staff->bio)
-                                                <blockquote>
-                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                                </blockquote>
-                                            @endif
+                                    @endif
+                                    @if($staff->bio)
+                                        <div class="team-details" id="staff{{ $k }}">
+                                            <p><strong>{{ $staff->category }}</strong></p>
+                                            <p>{!! nl2br(e($staff->bio)) !!}</p>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         <?php
@@ -401,7 +437,7 @@
                                 $count++;
                         ?>
                             <div class="col-md-4">
-                                <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                                <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
                                     <div class="team-image-container">
                                         <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
                                     </div>
@@ -409,34 +445,17 @@
                                         <h4 class="team-name">{{ $staff->name }}</h4>
                                         <div class="team-qualification">{{ $staff->qualification }}</div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Staff Profile</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                    @if($staff->bio)
+                                        <div class="expand-icon">
+                                            <i class="fa fa-plus"></i>
                                         </div>
-                                        <div class="modal-body">
-                                            <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}">
-                                            <div class="team-title">{{ $staff->category }}</div>
-                                            <h4 class="team-name">{{ $staff->name }}</h4>
-                                            <div class="team-qualification">{{ $staff->qualification }}</div>
-                                            @if($staff->bio)
-                                                <blockquote>
-                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                                </blockquote>
-                                            @endif
+                                    @endif
+                                    @if($staff->bio)
+                                        <div class="team-details" id="staff{{ $k }}">
+                                            <p><strong>{{ $staff->category }}</strong></p>
+                                            <p>{!! nl2br(e($staff->bio)) !!}</p>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         <?php
@@ -461,7 +480,7 @@
                                 $count++;
                         ?>
                             <div class="col-md-4">
-                                <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                                <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
                                     <div class="team-image-container">
                                         <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
                                     </div>
@@ -469,34 +488,17 @@
                                         <h4 class="team-name">{{ $staff->name }}</h4>
                                         <div class="team-qualification">{{ $staff->qualification }}</div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Staff Profile</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                    @if($staff->bio)
+                                        <div class="expand-icon">
+                                            <i class="fa fa-plus"></i>
                                         </div>
-                                        <div class="modal-body">
-                                            <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}">
-                                            <div class="team-title">{{ $staff->category }}</div>
-                                            <h4 class="team-name">{{ $staff->name }}</h4>
-                                            <div class="team-qualification">{{ $staff->qualification }}</div>
-                                            @if($staff->bio)
-                                                <blockquote>
-                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                                </blockquote>
-                                            @endif
+                                    @endif
+                                    @if($staff->bio)
+                                        <div class="team-details" id="staff{{ $k }}">
+                                            <p><strong>{{ $staff->category }}</strong></p>
+                                            <p>{!! nl2br(e($staff->bio)) !!}</p>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         <?php
@@ -517,7 +519,7 @@
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
                         @if($staff->category == 'Administrative Team')
-                            <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                            <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
                                 <div class="team-image-container">
                                     <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
@@ -525,34 +527,17 @@
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
                                 </div>
-                            </div>
-                            
-                            <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Staff Profile</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}">
-                                            <div class="team-title">{{ $staff->category }}</div>
-                                            <h4 class="team-name">{{ $staff->name }}</h4>
-                                            <div class="team-qualification">{{ $staff->qualification }}</div>
-                                            @if($staff->bio)
-                                                <blockquote>
-                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                                </blockquote>
-                                            @endif
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
-                                        </div>
+                                @if($staff->bio)
+                                    <div class="expand-icon">
+                                        <i class="fa fa-plus"></i>
                                     </div>
-                                </div>
+                                @endif
+                                @if($staff->bio)
+                                    <div class="team-details" id="staff{{ $k }}">
+                                        <p><strong>{{ $staff->category }}</strong></p>
+                                        <p>{!! nl2br(e($staff->bio)) !!}</p>
+                                    </div>
+                                @endif
                             </div>
                         @endif
                     @endforeach
@@ -565,7 +550,7 @@
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
                         @if($staff->category == 'Maintenance Team')
-                            <div class="team-card" style="cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                            <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
                                 <div class="team-image-container">
                                     <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
@@ -573,34 +558,17 @@
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
                                 </div>
-                            </div>
-                            
-                            <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Staff Profile</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}">
-                                            <div class="team-title">{{ $staff->category }}</div>
-                                            <h4 class="team-name">{{ $staff->name }}</h4>
-                                            <div class="team-qualification">{{ $staff->qualification }}</div>
-                                            @if($staff->bio)
-                                                <blockquote>
-                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                                </blockquote>
-                                            @endif
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
-                                        </div>
+                                @if($staff->bio)
+                                    <div class="expand-icon">
+                                        <i class="fa fa-plus"></i>
                                     </div>
-                                </div>
+                                @endif
+                                @if($staff->bio)
+                                    <div class="team-details" id="staff{{ $k }}">
+                                        <p><strong>{{ $staff->category }}</strong></p>
+                                        <p>{!! nl2br(e($staff->bio)) !!}</p>
+                                    </div>
+                                @endif
                             </div>
                         @endif
                     @endforeach
@@ -639,37 +607,12 @@
                     @foreach($staffs as $k => $staff)
                         @if($staff->category == 'Senior Care Assistants')
                             <div class="col-md-3 col-sm-6 text-center mb-3">
-                                <h5 style="font-weight: 600; color: #2C3E50; cursor: pointer;" data-toggle="modal" data-target="#staffModal{{ $k }}">
+                                <h5 style="font-weight: 600; color: #2C3E50;">
                                     {{ $staff->name }}
                                 </h5>
-                            </div>
-                            
-                            <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Staff Profile</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}">
-                                            <div class="team-title">{{ $staff->category }}</div>
-                                            <h4 class="team-name">{{ $staff->name }}</h4>
-                                            <div class="team-qualification">{{ $staff->qualification }}</div>
-                                            @if($staff->bio)
-                                                <blockquote>
-                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                                </blockquote>
-                                            @endif
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                @if($staff->qualification)
+                                    <p style="font-size: 13px; color: #777;">{{ $staff->qualification }}</p>
+                                @endif
                             </div>
                         @endif
                     @endforeach
