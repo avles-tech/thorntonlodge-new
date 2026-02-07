@@ -575,9 +575,9 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12 text-center hero-content">
                     <!-- Main Heading -->
-                    <h1 style="font-size: 52px; font-weight: 400; color: white; margin-bottom: 40px; line-height: 1.4; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); letter-spacing: 0.5px;">
+                    <h1 style="font-size: 44px; font-weight: 400; color: white; margin-bottom: 40px; line-height: 1.4; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); letter-spacing: 0.5px;">
                         Welcome to<br/>
-                        <span style="font-size: 62px; font-weight: 500; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: inline-block; letter-spacing: 1px;">Thornton Lodge</span>
+                        <span style="font-size: 52px; font-weight: 500; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); display: inline-block; letter-spacing: 1px;">Thornton Lodge</span>
                     </h1>
 
                     <!-- Subheading -->

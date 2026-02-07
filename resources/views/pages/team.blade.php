@@ -298,7 +298,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -358,7 +358,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -418,7 +418,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -473,7 +473,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -521,7 +521,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -590,7 +590,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -642,7 +642,7 @@
                             </div>
                             
                             <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
+                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true" data-backdrop="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -704,14 +704,14 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.modal').on('click', '.close, .modal-close-btn', function() {
         $(this).closest('.modal').modal('hide');
     });
-    
-    // Add backdrop click to close
+
+    // Add backdrop click to close - click outside modal content
     $('.modal').on('click', function(e) {
-        if ($(e.target).hasClass('modal')) {
+        if (e.target === this) {
             $(this).modal('hide');
         }
     });
-    
+
     // Add keyboard escape to close
     $(document).on('keydown', function(e) {
         if (e.key === 'Escape') {
