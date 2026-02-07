@@ -625,7 +625,7 @@
                 <h3 class="team-category-title">Culinary Team</h3>
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
-                        @if($staff->category == 'Cook')
+                        @if($staff->category == 'Culinary Team')
                             <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
                                 <div class="team-image-container">
                                     <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
