@@ -72,7 +72,8 @@
         }
         
         .team-content {
-            padding: 15px 15px 20px;
+            padding: 15px 15px 50px;
+            position: relative;
         }
         
         .team-title {
@@ -625,7 +626,7 @@
                 <div class="staff-grid">
                     @foreach($orderedStaffs as $k => $staff)
                         @if($staff->category == 'Cook')
-                            <div class="team-card">
+                            <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
                                 <div class="team-image-container">
                                     <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
                                 </div>
@@ -633,38 +634,18 @@
                                     <div class="team-title">Chef</div>
                                     <h4 class="team-name">{{ $staff->name }}</h4>
                                     <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    <button class="team-info-btn" data-toggle="modal" data-target="#staffModal{{ $k }}">
-                                        <i class="fa fa-info"></i>
-                                    </button>
                                 </div>
-                            </div>
-                            
-                            <!-- Staff Modal -->
-                            <div class="modal fade" id="staffModal{{ $k }}" tabindex="-1" role="dialog" aria-labelledby="staffModalLabel{{ $k }}" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Staff Profile</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}">
-                                            <div class="team-title">{{ $staff->category }}</div>
-                                            <h4 class="team-name">{{ $staff->name }}</h4>
-                                            <div class="team-qualification">{{ $staff->qualification }}</div>
-                                            @if($staff->bio)
-                                                <blockquote>
-                                                    <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                                </blockquote>
-                                            @endif
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="modal-close-btn" data-dismiss="modal">Close</button>
-                                        </div>
+                                @if($staff->bio)
+                                    <div class="expand-icon">
+                                        <i class="fa fa-plus"></i>
                                     </div>
-                                </div>
+                                @endif
+                                @if($staff->bio)
+                                    <div class="team-details" id="staff{{ $k }}">
+                                        <p><strong>{{ $staff->category }}</strong></p>
+                                        <p>{!! nl2br(e($staff->bio)) !!}</p>
+                                    </div>
+                                @endif
                             </div>
                         @endif
                     @endforeach
@@ -698,28 +679,38 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Close button click handler
-    $(document).on('click', '.modal .close', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Close button clicked');
-        $(this).closest('.modal').modal('hide');
-    });
-
-    // Modal close button handler
-    $(document).on('click', '.modal-close-btn', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).closest('.modal').modal('hide');
-    });
-
-    // Click outside modal to close
-    $('.modal').on('click', function(e) {
-        if (e.target === this) {
-            $(this).modal('hide');
-        }
-    });
 });
+
+// Toggle staff details function
+function toggleStaffDetails(staffId) {
+    const detailsElement = document.getElementById(staffId);
+    const expandIcon = detailsElement.previousElementSibling;
+
+    if (detailsElement.classList.contains('show')) {
+        detailsElement.classList.remove('show');
+        if (expandIcon && expandIcon.classList.contains('expand-icon')) {
+            expandIcon.querySelector('i').classList.remove('fa-minus');
+            expandIcon.querySelector('i').classList.add('fa-plus');
+        }
+    } else {
+        // Close all other open details
+        document.querySelectorAll('.team-details.show').forEach(function(el) {
+            el.classList.remove('show');
+            const icon = el.previousElementSibling;
+            if (icon && icon.classList.contains('expand-icon')) {
+                icon.querySelector('i').classList.remove('fa-minus');
+                icon.querySelector('i').classList.add('fa-plus');
+            }
+        });
+
+        // Open clicked details
+        detailsElement.classList.add('show');
+        if (expandIcon && expandIcon.classList.contains('expand-icon')) {
+            expandIcon.querySelector('i').classList.remove('fa-plus');
+            expandIcon.querySelector('i').classList.add('fa-minus');
+        }
+    }
+}
 
 // Parallax effect for hero
 window.addEventListener('scroll', function() {
