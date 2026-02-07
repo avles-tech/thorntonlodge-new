@@ -160,21 +160,24 @@
         .modal-dialog {
             max-width: 500px;
             margin: 30px auto;
+            position: relative;
+            z-index: 1055;
         }
 
         .modal-header {
             border-bottom: none !important;
             padding: 15px 20px 10px;
             position: relative;
+            z-index: 1;
         }
 
         .modal-header .close {
             font-size: 20px;
-            opacity: 1;
+            opacity: 1 !important;
             position: absolute;
             top: 10px;
             right: 10px;
-            z-index: 1060;
+            z-index: 9999 !important;
             color: #333;
             background: #f0f0f0;
             width: 32px;
@@ -184,16 +187,18 @@
             align-items: center;
             justify-content: center;
             border: none;
-            cursor: pointer;
+            cursor: pointer !important;
+            pointer-events: auto !important;
         }
 
         .modal-header .close:hover {
-            background: #7BA5C7;
-            color: white;
+            background: #7BA5C7 !important;
+            color: white !important;
         }
 
         .modal-header .close span {
             line-height: 0;
+            pointer-events: none;
         }
 
         .modal-header .modal-title {
@@ -219,14 +224,16 @@
         .modal-content {
             border-radius: 20px;
             border: none;
+            position: relative;
+            z-index: 1055;
         }
 
-        .modal {
-            z-index: 1050;
+        .modal.show {
+            z-index: 1050 !important;
         }
 
-        .modal-backdrop {
-            z-index: 1040;
+        .modal-backdrop.show {
+            z-index: 1040 !important;
         }
         
         .modal-footer {
@@ -748,23 +755,24 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Initialize modals with backdrop option
-    $('.modal').modal({
-        backdrop: true,
-        keyboard: true,
-        show: false
+    // Close button click handler
+    $(document).on('click', '.modal .close', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Close button clicked');
+        $(this).closest('.modal').modal('hide');
     });
 
-    // Ensure modal functionality works properly
-    $('.modal').on('click', '.close, .modal-close-btn', function(e) {
+    // Modal close button handler
+    $(document).on('click', '.modal-close-btn', function(e) {
         e.preventDefault();
         e.stopPropagation();
         $(this).closest('.modal').modal('hide');
     });
 
-    // Handle backdrop clicks
+    // Click outside modal to close
     $('.modal').on('click', function(e) {
-        if ($(e.target).hasClass('modal')) {
+        if (e.target === this) {
             $(this).modal('hide');
         }
     });
