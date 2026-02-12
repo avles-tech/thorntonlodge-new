@@ -374,7 +374,7 @@
             $orderedStaffs = $staffs->sortBy(function ($staff) {
                 if ($staff->category == 'Managing Director') return 1;
                 if ($staff->category == 'Deputy Managing Director') return 2;
-                if ($staff->category == 'Home Manager') return 3;
+                if ($staff->category == 'Deputy Manager') return 3;
                 if ($staff->category == 'Administrative Team') return 4;
                 return 5;
             });
@@ -470,14 +470,14 @@
                     </div>
                 </div>
                 
-                <!-- Home Manager Section -->
+                <!-- Deputy Manager Section -->
                 <div>
-                    <h4 class="text-center mb-3" style="color: #7BA5C7; font-size: 18px; font-weight: 600;">Home Manager</h4>
+                    <h4 class="text-center mb-3" style="color: #7BA5C7; font-size: 18px; font-weight: 600;">Deputy Manager</h4>
                     <div class="row justify-content-center">
                         <?php
                         $count = 0;
                         foreach($staffs as $k => $staff) {
-                            if($staff->category == 'Home Manager') {
+                            if($staff->category == 'Deputy Manager') {
                                 $count++;
                         ?>
                             <div class="col-md-4">
