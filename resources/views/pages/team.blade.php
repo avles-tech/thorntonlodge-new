@@ -370,287 +370,134 @@
                 </div>
             </div>
 
-            <?php
-            $orderedStaffs = $staffs->sortBy(function ($staff) {
-                if ($staff->category == 'Managing Director') return 1;
-                if ($staff->category == 'Deputy Managing Director') return 2;
-                if ($staff->category == 'Deputy Manager') return 3;
-                if ($staff->category == 'Administrative Team') return 4;
-                return 5;
-            });
-            ?>
-            
-            <!-- Management Team Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
-                <h3 class="team-category-title">Management Team</h3>
-                
-                <!-- Managing Director Section -->
-                <div class="mb-4">
-                    <h4 class="text-center mb-3" style="color: #7BA5C7; font-size: 18px; font-weight: 600;">Managing Director</h4>
-                    <div class="row justify-content-center">
-                        <?php
-                        $count = 0;
-                        foreach($staffs as $k => $staff) {
-                            if($staff->category == 'Managing Director') {
-                                $count++;
-                        ?>
-                            <div class="col-md-4">
-                                <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
-                                    <div class="team-image-container">
-                                        <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
-                                    </div>
-                                    <div class="team-content">
-                                        <h4 class="team-name">{{ $staff->name }}</h4>
-                                        <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    </div>
-                                    @if($staff->bio)
-                                        <div class="expand-icon">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
+            {{-- Dynamic Team Sections --}}
+            @foreach($sections as $parentSection => $sectionCategories)
+                @if($parentSection)
+                    {{-- Render sections with parent (e.g., "Management Team") --}}
+                    <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
+                        <h3 class="team-category-title">{{ $parentSection }}</h3>
+
+                        @foreach($sectionCategories as $category)
+                            @if($category->staffs->count() > 0)
+                                {{-- Sub-section title for management roles --}}
+                                <div class="mb-4">
+                                    <h4 class="text-center mb-3" style="color: #7BA5C7; font-size: 18px; font-weight: 600;">
+                                        {{ $category->section_title ?? $category->name }}
+                                    </h4>
+
+                                    @if($category->description)
+                                        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666;">
+                                            {{ $category->description }}
+                                        </p>
                                     @endif
-                                    @if($staff->bio)
-                                        <div class="team-details" id="staff{{ $k }}">
-                                            <p><strong>{{ $staff->category }}</strong></p>
-                                            <p>{!! nl2br(e($staff->bio)) !!}</p>
+
+                                    {{-- Render based on display type --}}
+                                    @if($category->display_type === 'individual-cards')
+                                        <div class="row justify-content-center">
+                                            @foreach($category->staffs as $staff)
+                                                <div class="col-md-4">
+                                                    <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $staff->id }}')">
+                                                        <div class="team-image-container">
+                                                            <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}"
+                                                                 alt="{{ $staff->name }}" class="team-image">
+                                                        </div>
+                                                        <div class="team-content">
+                                                            <h4 class="team-name">{{ $staff->name }}</h4>
+                                                            @if($staff->description)
+                                                                <div class="team-qualification">{{ $staff->description }}</div>
+                                                            @endif
+                                                        </div>
+                                                        @if($staff->bio)
+                                                            <div class="expand-icon">
+                                                                <i class="fa fa-plus"></i>
+                                                            </div>
+                                                            <div class="team-details" id="staff{{ $staff->id }}">
+                                                                <p><strong>{{ $category->name }}</strong></p>
+                                                                <p>{!! nl2br(e($staff->bio)) !!}</p>
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     @endif
                                 </div>
-                            </div>
-                        <?php
-                            }
-                        }
-                        // If no staff in this role, show a message
-                        if($count == 0) {
-                            echo '<div class="col-12 text-center"><p class="text-muted">No staff in this role</p></div>';
-                        }
-                        ?>
+                            @endif
+                        @endforeach
                     </div>
-                </div>
-                
-                <!-- Deputy Managing Director Section -->
-                <div class="mb-4">
-                    <h4 class="text-center mb-3" style="color: #7BA5C7; font-size: 18px; font-weight: 600;">Deputy Managing Director</h4>
-                    <div class="row justify-content-center">
-                        <?php
-                        $count = 0;
-                        foreach($staffs as $k => $staff) {
-                            if($staff->category == 'Deputy Managing Director') {
-                                $count++;
-                        ?>
-                            <div class="col-md-4">
-                                <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
-                                    <div class="team-image-container">
-                                        <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
+                @else
+                    {{-- Render standalone categories (no parent section) --}}
+                    @foreach($sectionCategories as $category)
+                        @if($category->staffs->count() > 0)
+                            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
+                                <h3 class="team-category-title">{{ $category->section_title ?? $category->name }}</h3>
+
+                                @if($category->description)
+                                    <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666;">
+                                        {{ $category->description }}
+                                    </p>
+                                @endif
+
+                                {{-- Display based on display_type --}}
+                                @if($category->display_type === 'card-grid')
+                                    <div class="staff-grid">
+                                        @foreach($category->staffs as $staff)
+                                            <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $staff->id }}')">
+                                                <div class="team-image-container">
+                                                    <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}"
+                                                         alt="{{ $staff->name }}" class="team-image">
+                                                </div>
+                                                <div class="team-content">
+                                                    @if($staff->position)
+                                                        <div class="team-title">{{ $staff->position }}</div>
+                                                    @endif
+                                                    <h4 class="team-name">{{ $staff->name }}</h4>
+                                                    @if($staff->description)
+                                                        <div class="team-qualification">{{ $staff->description }}</div>
+                                                    @endif
+                                                </div>
+                                                @if($staff->bio)
+                                                    <div class="expand-icon">
+                                                        <i class="fa fa-plus"></i>
+                                                    </div>
+                                                    <div class="team-details" id="staff{{ $staff->id }}">
+                                                        <p><strong>{{ $category->name }}</strong></p>
+                                                        <p>{!! nl2br(e($staff->bio)) !!}</p>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        @endforeach
                                     </div>
-                                    <div class="team-content">
-                                        <h4 class="team-name">{{ $staff->name }}</h4>
-                                        <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    </div>
-                                    @if($staff->bio)
-                                        <div class="expand-icon">
-                                            <i class="fa fa-plus"></i>
+
+                                @elseif($category->display_type === 'name-list')
+                                    {{-- Optional: Show group image if exists --}}
+                                    @if(file_exists(public_path('Uploads/staff_images/'.$category->slug.'.jpg')))
+                                        <div class="text-center" style="margin-bottom: 20px;">
+                                            <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                                                <img src="{{ asset('Uploads/staff_images/'.$category->slug.'.jpg') }}"
+                                                     alt="{{ $category->name }}" style="width: 100%; max-width: 800px; display: inline-block;">
+                                            </div>
                                         </div>
                                     @endif
-                                    @if($staff->bio)
-                                        <div class="team-details" id="staff{{ $k }}">
-                                            <p><strong>{{ $staff->category }}</strong></p>
-                                            <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                        <?php
-                            }
-                        }
-                        // If no staff in this role, show a message
-                        if($count == 0) {
-                            echo '<div class="col-12 text-center"><p class="text-muted">No staff in this role</p></div>';
-                        }
-                        ?>
-                    </div>
-                </div>
-                
-                <!-- Deputy Manager Section -->
-                <div>
-                    <h4 class="text-center mb-3" style="color: #7BA5C7; font-size: 18px; font-weight: 600;">Deputy Manager</h4>
-                    <div class="row justify-content-center">
-                        <?php
-                        $count = 0;
-                        foreach($staffs as $k => $staff) {
-                            if($staff->category == 'Deputy Manager') {
-                                $count++;
-                        ?>
-                            <div class="col-md-4">
-                                <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
-                                    <div class="team-image-container">
-                                        <img src="{{ asset('Uploads/staff_images/'.$staff->image) }}" alt="{{ $staff->name }}" class="team-image">
-                                    </div>
-                                    <div class="team-content">
-                                        <h4 class="team-name">{{ $staff->name }}</h4>
-                                        <div class="team-qualification">{{ $staff->qualification }}</div>
-                                    </div>
-                                    @if($staff->bio)
-                                        <div class="expand-icon">
-                                            <i class="fa fa-plus"></i>
-                                        </div>
-                                    @endif
-                                    @if($staff->bio)
-                                        <div class="team-details" id="staff{{ $k }}">
-                                            <p><strong>{{ $staff->category }}</strong></p>
-                                            <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                        <?php
-                            }
-                        }
-                        // If no staff in this role, show a message
-                        if($count == 0) {
-                            echo '<div class="col-12 text-center"><p class="text-muted">No staff in this role</p></div>';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Administrative Team Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
-                <h3 class="team-category-title">Administrative Team</h3>
-                <div class="staff-grid">
-                    @foreach($orderedStaffs as $k => $staff)
-                        @if($staff->category == 'Administrative Team')
-                            <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
-                                <div class="team-image-container">
-                                    <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
-                                </div>
-                                <div class="team-content">
-                                    <h4 class="team-name">{{ $staff->name }}</h4>
-                                    <div class="team-qualification">{{ $staff->qualification }}</div>
-                                </div>
-                                @if($staff->bio)
-                                    <div class="expand-icon">
-                                        <i class="fa fa-plus"></i>
-                                    </div>
-                                @endif
-                                @if($staff->bio)
-                                    <div class="team-details" id="staff{{ $k }}">
-                                        <p><strong>{{ $staff->category }}</strong></p>
-                                        <p>{!! nl2br(e($staff->bio)) !!}</p>
+
+                                    <div class="row justify-content-center">
+                                        @foreach($category->staffs as $staff)
+                                            <div class="col-md-3 col-sm-6 text-center mb-3">
+                                                <h5 style="font-weight: 600; color: #2C3E50;">
+                                                    {{ $staff->name }}
+                                                </h5>
+                                                @if($staff->description)
+                                                    <p style="font-size: 13px; color: #777;">{{ $staff->description }}</p>
+                                                @endif
+                                            </div>
+                                        @endforeach
                                     </div>
                                 @endif
                             </div>
                         @endif
                     @endforeach
-                </div>
-            </div>
-            
-            <!-- Maintenance Team Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
-                <h3 class="team-category-title">Maintenance Team</h3>
-                <div class="staff-grid">
-                    @foreach($orderedStaffs as $k => $staff)
-                        @if($staff->category == 'Maintenance Team')
-                            <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
-                                <div class="team-image-container">
-                                    <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
-                                </div>
-                                <div class="team-content">
-                                    <h4 class="team-name">{{ $staff->name }}</h4>
-                                    <div class="team-qualification">{{ $staff->qualification }}</div>
-                                </div>
-                                @if($staff->bio)
-                                    <div class="expand-icon">
-                                        <i class="fa fa-plus"></i>
-                                    </div>
-                                @endif
-                                @if($staff->bio)
-                                    <div class="team-details" id="staff{{ $k }}">
-                                        <p><strong>{{ $staff->category }}</strong></p>
-                                        <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                    </div>
-                                @endif
-                            </div>
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-            
-            <!-- Primary Senior Care Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
-                <h3 class="team-category-title">Primary Senior Care</h3>
-                <div class="staff-grid">
-                    @foreach($staffs as $k => $staff)
-                        @if($staff->category == 'Primary Senior Care')
-                            <div class="team-card" style="cursor: pointer;">
-                                <div class="team-image-container">
-                                    <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
-                                </div>
-                                <div class="team-content">
-                                    <h4 class="team-name">{{ $staff->name }}</h4>
-                                    <div class="team-qualification">{{ $staff->qualification }}</div>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-            
-            <!-- Senior Care Assistants Section -->
-            <div class="team-section scroll-animate-zoom" style="margin-bottom: 60px;">
-                <h3 class="team-category-title">Senior Care Assistants</h3>
-                <div class="text-center" style="margin-bottom: 20px;">
-                    <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-                        <img src="{{ asset('Uploads/staff_images/staff1.jpg') }}" alt="Senior Care Assistants Team" style="width: 100%; max-width: 800px; display: inline-block;">
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    @foreach($staffs as $k => $staff)
-                        @if($staff->category == 'Senior Care Assistants')
-                            <div class="col-md-3 col-sm-6 text-center mb-3">
-                                <h5 style="font-weight: 600; color: #2C3E50;">
-                                    {{ $staff->name }}
-                                </h5>
-                                @if($staff->qualification)
-                                    <p style="font-size: 13px; color: #777;">{{ $staff->qualification }}</p>
-                                @endif
-                            </div>
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-            
-            <!-- Cook Section -->
-            <div class="team-section scroll-animate-zoom">
-                <h3 class="team-category-title">Culinary Team</h3>
-                <div class="staff-grid">
-                    @foreach($orderedStaffs as $k => $staff)
-                        @if($staff->category == 'Culinary Team')
-                            <div class="team-card" style="cursor: pointer; position: relative;" onclick="toggleStaffDetails('staff{{ $k }}')">
-                                <div class="team-image-container">
-                                    <img src="{{ $staff->image ? asset('Uploads/staff_images/'.$staff->image) : asset('Uploads/staff_images/default-user.png') }}" alt="{{ $staff->name }}" class="team-image">
-                                </div>
-                                <div class="team-content">
-                                    <div class="team-title">Chef</div>
-                                    <h4 class="team-name">{{ $staff->name }}</h4>
-                                    <div class="team-qualification">{{ $staff->qualification }}</div>
-                                </div>
-                                @if($staff->bio)
-                                    <div class="expand-icon">
-                                        <i class="fa fa-plus"></i>
-                                    </div>
-                                @endif
-                                @if($staff->bio)
-                                    <div class="team-details" id="staff{{ $k }}">
-                                        <p><strong>{{ $staff->category }}</strong></p>
-                                        <p>{!! nl2br(e($staff->bio)) !!}</p>
-                                    </div>
-                                @endif
-                            </div>
-                        @endif
-                    @endforeach
-                </div>
-            </div>
+                @endif
+            @endforeach
         </div>
     </section>
 @endsection

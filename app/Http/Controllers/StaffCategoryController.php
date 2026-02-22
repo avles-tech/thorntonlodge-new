@@ -17,7 +17,7 @@ class StaffCategoryController extends Controller
     {
         $data=array(
             'pagetitle'=>'Dashboard :: Staff Category',
-            'tags'=>StaffCategory::orderby('id','desc')->get(),
+            'tags'=>StaffCategory::orderby('order','asc')->orderby('id','desc')->get(),
             'postviewid'=>0,
         );
         return view('staff.category.index')->with($data);
@@ -31,7 +31,9 @@ class StaffCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required'
+            'title' => 'required',
+            'display_type' => 'required|in:card-grid,name-list,individual-cards',
+            'order' => 'required|integer|min:1'
         ]);
 
         $timezone_offset_minutes = 330;
@@ -45,7 +47,12 @@ class StaffCategoryController extends Controller
             $category = new StaffCategory();
             $category->name = $request->input('title');
             $category->slug = \Illuminate\Support\Str::slug($request->input('title'));
-            $category->order = 1;
+            $category->section_title = $request->input('section_title') ?? $request->input('title');
+            $category->parent_section = $request->input('parent_section');
+            $category->display_type = $request->input('display_type');
+            $category->is_active = $request->has('is_active') ? 1 : 0;
+            $category->description = $request->input('description');
+            $category->order = $request->input('order');
             $category->created_at = $NowTime;
             $category->save();
             $sucessMsg='The <strong>'.$request->input('title').'</strong> Staff category has been successfully added!';
@@ -80,7 +87,9 @@ class StaffCategoryController extends Controller
     {
         $this->validate($request, [
             'id' => 'required',
-            'title' => 'required'
+            'title' => 'required',
+            'display_type' => 'required|in:card-grid,name-list,individual-cards',
+            'order' => 'required|integer|min:1'
         ]);
 
         $timezone_offset_minutes = 330;
@@ -95,6 +104,12 @@ class StaffCategoryController extends Controller
                 ->update([
                     'name' => $request->title,
                     'slug' => \Illuminate\Support\Str::slug($request->title),
+                    'section_title' => $request->input('section_title') ?? $request->title,
+                    'parent_section' => $request->input('parent_section'),
+                    'display_type' => $request->input('display_type'),
+                    'is_active' => $request->has('is_active') ? 1 : 0,
+                    'description' => $request->input('description'),
+                    'order' => $request->input('order'),
                     'updated_at' => $NowTime,
                 ]);
 

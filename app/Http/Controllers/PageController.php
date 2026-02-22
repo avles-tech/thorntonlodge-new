@@ -82,15 +82,27 @@ class PageController extends Controller
 
     public function team()
     {
+        // Get all active categories ordered by 'order' field
+        $categories = StaffCategory::where('is_active', true)
+            ->orderBy('order')
+            ->with(['staffs' => function($query) {
+                $query->where('status', 'ACTIVE')
+                      ->orderBy('order');
+            }])
+            ->get();
 
-        $staffs = Staff::orderby('id')->get();
-        $categories =  StaffCategory::get();
+        // Group categories by parent_section
+        $sections = $categories->groupBy('parent_section');
+
+        // Legacy support: Get all staffs with category info for backward compatibility
+        $staffs = Staff::with('category')
+            ->where('status', 'ACTIVE')
+            ->orderBy('id')
+            ->get();
 
         foreach ($staffs as $k => $staff) {
-            foreach ($categories as $n => $category) {
-                if ($staff->category_id == $category->id) {
-                    $staffs[$k]['category'] = $category->name;
-                }
+            if ($staff->category) {
+                $staffs[$k]['category'] = $staff->category->name;
             }
         }
 
@@ -99,7 +111,9 @@ class PageController extends Controller
             'description' => "It is early collaboration is vital, it is all about patient care.",
             'keywords' => "Care Home, team people",
             'Abstract' => "Thornton Lodge Team",
-            'staffs' => $staffs
+            'staffs' => $staffs,
+            'categories' => $categories,
+            'sections' => $sections
         );
         return view('pages.team')->with($data);
     }
