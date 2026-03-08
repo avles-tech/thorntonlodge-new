@@ -79,6 +79,9 @@ Route::post('/staff-category/update','StaffCategoryController@update');
 Route::get('/staff-category/{id}/delete','StaffCategoryController@destroy');
 Route::get('/staff-category/delete/bulk-delete','StaffCategoryController@destroy_bulk');
 
+Route::get('/site-settings','SiteSettingController@index');
+Route::post('/site-settings/update-menu-pdf','SiteSettingController@updateMenuPdf');
+
 Route::resource('/staff','StaffController');
 Route::get('/staff/edit/{id}','StaffController@edit');
 Route::post('/staff/update','StaffController@update');

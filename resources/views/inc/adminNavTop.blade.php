@@ -51,7 +51,12 @@
 							<li><a><i class="fa fa-file"></i> Menu <span class="fa fa-chevron-down"></span></a>
 								<ul class="nav child_menu">
 									<li><a href="/menu">Menu</a></li>
-									
+
+								</ul>
+							</li>
+							<li><a><i class="fa fa-cog"></i> Settings <span class="fa fa-chevron-down"></span></a>
+								<ul class="nav child_menu">
+									<li><a href="/site-settings"><i class="fa fa-file-pdf-o"></i> Menu PDF</a></li>
 								</ul>
 							</li>
 						</ul>

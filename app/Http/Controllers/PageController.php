@@ -57,11 +57,14 @@ class PageController extends Controller
 
     public function cuisine()
     {
+        $menuPdfPath = \App\SiteSetting::get('menu_pdf_path', '/Uploads/menu_of_the_year/MenuOfTheYear.pdf');
+
         $data = array(
             'page_title' => 'Cuisine > Thornton Lodge',
             'description' => "The menu is decided after close consultation with the Residents.!",
             'keywords' => "cuisine, about Thornton Cuisine",
             'Abstract' => "About Thornton Lodge Cuisine",
+            'menu_pdf_path' => $menuPdfPath,
         );
         return view('pages.cuisine')->with($data);
     }

@@ -187,7 +187,7 @@
             </div>
             
             <div class="text-center scroll-animate" style="margin-top: 20px;">
-                <a href="javascript:void(0);" onclick="window.open('/Uploads/menu_of_the_year/MenuOfTheYear.pdf', '_blank', 'width=1000,height=600');" class="menu-button ripple">
+                <a href="javascript:void(0);" onclick="window.open('{{ $menu_pdf_path }}', '_blank', 'width=1000,height=600');" class="menu-button ripple">
                     <i class="fa fa-file-pdf-o"></i>View <span>Menu of the Year</span>
                 </a>
             </div>
